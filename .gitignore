@@ -1,0 +1,13 @@
+node_modules/
+
+typings/**/*.js
+typings/**/*.mjs
+typings/**/*.d.ts
+typings/**/*.map
+
+*.d.ts
+*.map
+*.js
+*.mjs
+
+.DS_STORE

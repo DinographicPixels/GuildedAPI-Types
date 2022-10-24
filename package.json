@@ -1,0 +1,28 @@
+{
+  "name": "guildedapi-types",
+  "version": "0.1.0",
+  "description": "Up to date Guilded API Typings. Built for TouchGuild.",
+  "main": "v1.ts",
+  "scripts": {
+    "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DinographicPixels/guildedapi-types.git"
+  },
+  "keywords": [
+    "guilded-api",
+    "types",
+    "typings"
+  ],
+  "author": "DinographicPixels [PakkoGraphic]",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/DinographicPixels/guildedapi-types/issues"
+  },
+  "homepage": "https://github.com/DinographicPixels/guildedapi-types#readme",
+  "devDependencies": {
+    "gen-esm-wrapper": "^1.1.3"
+  }
+}

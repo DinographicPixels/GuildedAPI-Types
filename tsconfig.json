@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "target": "ES2020",
+      "module": "CommonJS",
+      "lib": ["ESNext"],
+      "strict": true,
+      "alwaysStrict": true,
+      "noUnusedParameters": true,
+      "noUnusedLocals": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "exactOptionalPropertyTypes": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "declaration": true
+  },
+  "include": [
+    "typings",
+    "v1.ts"
+  ]
+}

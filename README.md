@@ -1,2 +1,2 @@
-# touchguilded-api-types
- Guilded API Types for TouchGuild.
+# Guilded API Types
+## Every type definitions for the (Guilded API)[https://www.guilded.gg/docs/api/].
