@@ -35,6 +35,8 @@ const GuildCategory: APIGuildCategories = 'community';
 # Who's using those types?
 - TouchGuild (Guilded Library)
 
+### When modifications are needed, feel free to make PRs.
+
 # Links
 - [GitHub](https://github.com/DinographicPixels/GuildedAPI-Types)
 - [NPM](https://www.npmjs.com/package/guildedapi-types)
