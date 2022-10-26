@@ -41,3 +41,4 @@ const GuildCategory: APIGuildCategories = 'community';
 - [GitHub](https://github.com/DinographicPixels/GuildedAPI-Types)
 - [NPM](https://www.npmjs.com/package/guildedapi-types)
 - [Guilded API Documentation](https://www.guilded.gg/docs/api/)
+(Server is called Guild in this repository)
