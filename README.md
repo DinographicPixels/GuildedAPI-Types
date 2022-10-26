@@ -8,3 +8,34 @@
   <img src="https://img.shields.io/github/stars/DinographicPixels/GuildedAPI-Types?color=yellow&style=flat-square">
   <img src="https://img.shields.io/npm/dw/guildedapi-types?color=red&style=flat-square">
 </p>
+
+# Installation
+```bash
+npm install guildedapi-types@latest
+```
+
+# Get started
+To import the API Types, you need to choose the API version. E.g: `guildedapi-types/v1`
+
+You can import every types or some, E.g:
+```typescript
+import * as APITypes from 'guildedapi-types/v1'
+```
+
+```typescript
+import { APIGuild } from 'guildedapi-types/v1'
+```
+
+To use most of types, you'll need Typescript.
+Here's an example:
+```typescript
+const GuildCategory: APIGuildCategories = 'community';
+```
+
+# Who's using those types?
+- TouchGuild (Guilded Library)
+
+# Links
+- [GitHub](https://github.com/DinographicPixels/GuildedAPI-Types)
+- [NPM](https://www.npmjs.com/package/guildedapi-types)
+- [Guilded API Documentation](https://www.guilded.gg/docs/api/)
