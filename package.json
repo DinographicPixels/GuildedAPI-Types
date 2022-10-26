@@ -1,7 +1,7 @@
 {
   "name": "guildedapi-types",
   "version": "0.1.0",
-  "description": "Up to date Guilded API Typings. Built for TouchGuild.",
+  "description": "Up to date Guilded API Typings. Contribution is welcome.",
   "main": "v1.ts",
   "scripts": {
     "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs",
