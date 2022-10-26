@@ -32,6 +32,9 @@ Here's an example:
 const GuildCategory: APIGuildCategories = 'community';
 ```
 
+## Supported API versions
+- v1
+
 # Who's using those types?
 - TouchGuild (Guilded Library)
 
