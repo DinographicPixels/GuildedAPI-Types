@@ -2,6 +2,8 @@ export const GatewayVersion = "1";
 export const GatewayURL = `wss://www.guilded.gg/websocket/v${GatewayVersion}`;
 
 export type GatewayEvents = 
+        // Misc
+            'BotTeamMembershipCreated' |
         // Message
             'ChatMessageCreated' |
             'ChatMessageUpdated' |
@@ -20,6 +22,9 @@ export type GatewayEvents =
             'ForumTopicUnpinned' | 
             'ForumTopicReactionCreated' |
             'ForumTopicReactionDeleted' |
+            'ForumTopicCommentCreated' |
+            'ForumTopicCommentUpdated' |
+            'ForumTopicCommentDeleted' |
         // Guild
             'TeamMemberBanned' |
             'TeamMemberUnbanned' | 

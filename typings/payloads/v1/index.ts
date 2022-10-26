@@ -3,6 +3,7 @@ export * from './Channels';
 export * from './Chat';
 export * from './Docs';
 export * from './Emotes';
+export * from './Events'
 export * from './Forums';
 // export * from './GuildXP';
 export * from './Guilds';
