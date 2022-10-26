@@ -32,9 +32,6 @@ Here's an example:
 const GuildCategory: APIGuildCategories = 'community';
 ```
 
-## Supported API versions
-- v1
-
 # Who's using those types?
 - TouchGuild (Guilded Library)
 
@@ -44,5 +41,3 @@ const GuildCategory: APIGuildCategories = 'community';
 - [GitHub](https://github.com/DinographicPixels/GuildedAPI-Types)
 - [NPM](https://www.npmjs.com/package/guildedapi-types)
 - [Guilded API Documentation](https://www.guilded.gg/docs/api/)
-
-*(Server is called Guild in this repository)*
