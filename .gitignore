@@ -11,3 +11,4 @@ typings/**/*.map
 *.mjs
 
 .DS_STORE
+package-lock.json
