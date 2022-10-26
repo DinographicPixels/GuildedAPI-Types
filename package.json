@@ -2,7 +2,7 @@
   "name": "guildedapi-types",
   "version": "0.1.0",
   "description": "Up to date Guilded API Typings. Contribution is welcome.",
-  "main": "v1.ts",
+  "main": "index.js",
   "scripts": {
     "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs",
     "prepublishOnly": "npm run build"

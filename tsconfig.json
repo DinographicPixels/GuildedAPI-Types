@@ -16,6 +16,7 @@
   },
   "include": [
     "typings",
-    "v1.ts"
+    "v1.ts",
+    "index.ts"
   ]
 }
