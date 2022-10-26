@@ -3,10 +3,17 @@ import { APIGuildChannel } from "./Channels";
 import { APIChatMessage } from "./Chat";
 import { APIDoc } from "./Docs";
 import { APIEmote } from "./Emotes";
-import { APIForumTopic } from "./Forums";
+import { APIForumTopic, APIForumTopicComment } from "./Forums";
+import { APIGuild } from "./Guilds";
 import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
 import { APIWebhook } from "./Webhooks";
+
+export interface GatewayEvent_BotTeamMembershipCreated {
+    server: APIGuild,
+    /** The ID of the user who created this server membership */
+    createdBy: string
+}
 
 export interface GatewayEvent_ChatMessageCreated {
     /** The ID of the server */
@@ -221,6 +228,24 @@ export interface GatewayEvent_ForumTopicUnlocked {
     /** The ID of the server */
     serverId?: string,
     forumTopic: APIForumTopic
+}
+
+export interface GatewayEvent_ForumTopicCommentCreated {
+    /** The ID of the server */
+    serverId: string,
+    forumTopicComment: APIForumTopicComment
+}
+
+export interface GatewayEvent_ForumTopicCommentUpdated {
+    /** The ID of the server */
+    serverId: string,
+    forumTopicComment: APIForumTopicComment
+}
+
+export interface GatewayEvent_ForumTopicCommentDeleted {
+    /** The ID of the server */
+    serverId: string,
+    forumTopicComment: APIForumTopicComment
 }
 
 export interface GatewayEvent_CalendarEventRsvpUpdated {
