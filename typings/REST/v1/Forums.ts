@@ -20,7 +20,7 @@ export interface GETForumTopicsQuery {
 }
 
 export interface GETForumTopicsResponse {
-    forumTopics: APIForumTopicSummary
+    forumTopics: Array<APIForumTopicSummary>
 }
 
 

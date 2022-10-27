@@ -53,3 +53,14 @@ export interface APIGuildMemberBan {
     /** The ISO 8601 timestamp that the server member ban was created at */
     createdAt: string
 }
+
+
+export interface APIBotUser {
+    user: {
+        id: string,
+        botId: string,
+        name: string,
+        createdAt: string,
+        createdBy: string
+    }
+}

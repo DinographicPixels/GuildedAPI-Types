@@ -28,20 +28,22 @@ export interface APIListItem {
     /** The ID of the user who completed this list item */
     completedBy?: string,
     /** List item note */
-    note?: {
-        /** The ISO 8601 timestamp that the note was created at. If this field is populated, then there's a note associated with the list item */
-        createdAt: string,
-        /** The ID of the user who created this note */
-        createdBy: string,
-        /** The ISO 8601 timestamp that the note was updated at, if relevant */
-        updatedAt?: string,
-        /** The ID of the user who updated this note */
-        updatedBy?: string,
-        /** Note's mentions */
-        mentions?: APIMentions,
-        /** The note of the list item */
-        content: string
-    }
+    note?: APIListItemNote
+}
+
+export interface APIListItemNote {
+    /** The ISO 8601 timestamp that the note was created at. If this field is populated, then there's a note associated with the list item */
+    createdAt: string,
+    /** The ID of the user who created this note */
+    createdBy: string,
+    /** The ISO 8601 timestamp that the note was updated at, if relevant */
+    updatedAt?: string,
+    /** The ID of the user who updated this note */
+    updatedBy?: string,
+    /** Note's mentions */
+    mentions?: APIMentions,
+    /** The note of the list item */
+    content: string
 }
 
 export interface APIListItemSummary {
@@ -72,14 +74,16 @@ export interface APIListItemSummary {
     /** The ID of the user who completed this list item */
     completedBy?: string,
     /** List item note */
-    note?: {
-        /** The ISO 8601 timestamp that the note was created at. If this field is populated, then there's a note associated with the list item */
-        createdAt: string,
-        /** The ID of the user who created this note */
-        createdBy: string,
-        /** The ISO 8601 timestamp that the note was updated at, if relevant */
-        updatedAt?: string,
-        /** The ID of the user who updated this note */
-        updatedBy?: string,
-    }
+    note?: APIListItemNoteSummary
+}
+
+export interface APIListItemNoteSummary {
+    /** The ISO 8601 timestamp that the note was created at. If this field is populated, then there's a note associated with the list item */
+    createdAt: string,
+    /** The ID of the user who created this note */
+    createdBy: string,
+    /** The ISO 8601 timestamp that the note was updated at, if relevant */
+    updatedAt?: string,
+    /** The ID of the user who updated this note */
+    updatedBy?: string,
 }
