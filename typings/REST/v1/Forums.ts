@@ -42,10 +42,32 @@ export interface PATCHForumTopicResponse {
 }
 
 
+export interface POSTForumTopicCommentBody {
+    /** The content of the forum topic */
+    content: string
+}
+
+export interface POSTForumTopicCommentResponse {
+    forumTopicComment: APIForumTopicComment
+}
+
+
+export interface GETForumTopicCommentsResponse {
+    forumTopicComments: Array<APIForumTopicComment>
+}
+
 
 export interface GETForumTopicCommentResponse {
     forumTopicComments: APIForumTopicComment
 }
 
 
+export interface PATCHForumTopicCommentBody {
+    /** The content of the forum topic */
+    content?: string
+}
+
+export interface PATCHForumTopicCommentResponse {
+    forumTopicComment: APIForumTopicComment
+}
 
