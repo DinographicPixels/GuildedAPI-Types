@@ -58,7 +58,7 @@ export interface GETForumTopicCommentsResponse {
 
 
 export interface GETForumTopicCommentResponse {
-    forumTopicComments: APIForumTopicComment
+    forumTopicComment: APIForumTopicComment
 }
 
 
