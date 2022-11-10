@@ -9,7 +9,7 @@ import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
 import { APIWebhook } from "./Webhooks";
 
-export interface GatewayEvent_BotTeamMembershipCreated {
+export interface GatewayEvent_BotServerMembershipCreated {
     server: APIGuild,
     /** The ID of the user who created this server membership */
     createdBy: string
@@ -43,13 +43,13 @@ export interface GatewayEvent_ChatMessageDeleted {
     }
 }
 
-export interface GatewayEvent_TeamMemberJoined {
+export interface GatewayEvent_ServerMemberJoined {
     /** The ID of the server */
     serverId: string,
     member: APIGuildMember
 }
 
-export interface GatewayEvent_TeamMemberRemoved {
+export interface GatewayEvent_ServerMemberRemoved {
     /** The ID of the server */
     serverId: string,
     /** The ID of the user */
@@ -60,19 +60,19 @@ export interface GatewayEvent_TeamMemberRemoved {
     isBan?: boolean
 }
 
-export interface GatewayEvent_TeamMemberBanned {
+export interface GatewayEvent_ServerMemberBanned {
     /** The ID of the server */
     serverId: string,
     serverMemberBan: APIGuildMemberBan
 }
 
-export interface GatewayEvent_TeamMemberUnbanned {
+export interface GatewayEvent_ServerMemberUnbanned {
     /** The ID of the server */
     serverId: string,
     serverMemberBan: APIGuildMemberBan
 }
 
-export interface GatewayEvent_TeamMemberUpdated {
+export interface GatewayEvent_ServerMemberUpdated {
     /** The ID of the server */
     serverId: string,
     userInfo: {
@@ -83,7 +83,7 @@ export interface GatewayEvent_TeamMemberUpdated {
     }
 }
 
-export interface GatewayEvent_teamRolesUpdated {
+export interface GatewayEvent_ServerRolesUpdated {
     /** The ID of the server */
     serverId: string,
     memberRoleIds: Array<{
@@ -94,31 +94,31 @@ export interface GatewayEvent_teamRolesUpdated {
     }>
 }
 
-export interface GatewayEvent_TeamChannelCreated {
+export interface GatewayEvent_ServerChannelCreated {
     /** The ID of the server */
     serverId: string,
     channel: APIGuildChannel
 }
 
-export interface GatewayEvent_TeamChannelUpdated {
+export interface GatewayEvent_ServerChannelUpdated {
     /** The ID of the server */
     serverId: string,
     channel: APIGuildChannel
 }
 
-export interface GatewayEvent_TeamChannelDeleted {
+export interface GatewayEvent_ServerChannelDeleted {
     /** The ID of the server */
     serverId: string,
     channel: APIGuildChannel
 }
 
-export interface GatewayEvent_TeamWebhookCreated {
+export interface GatewayEvent_ServerWebhookCreated {
     /** The ID of the server */
     serverId: string,
     webhook: APIWebhook
 }
 
-export interface GatewayEvent_TeamWebhookUpdated {
+export interface GatewayEvent_ServerWebhookUpdated {
     /** The ID of the server */
     serverId: string,
     webhook: APIWebhook

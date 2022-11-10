@@ -3,7 +3,7 @@ export const GatewayURL = `wss://www.guilded.gg/websocket/v${GatewayVersion}`;
 
 export type GatewayEvents = 
         // Misc
-            'BotTeamMembershipCreated' |
+            'BotServerMembershipCreated' |
         // Message
             'ChatMessageCreated' |
             'ChatMessageUpdated' |
@@ -11,9 +11,9 @@ export type GatewayEvents =
             'ChannelMessageReactionCreated' |
             'ChannelMessageReactionDeleted' |
         // Channel 
-            'TeamChannelCreated' |
-            'TeamChannelUpdated' |
-            'TeamChannelDeleted' |
+            'ServerChannelCreated' |
+            'ServerChannelUpdated' |
+            'ServerChannelDeleted' |
         // Forum Topic
             'ForumTopicCreated' |
             'ForumTopicUpdated' |
@@ -26,15 +26,15 @@ export type GatewayEvents =
             'ForumTopicCommentUpdated' |
             'ForumTopicCommentDeleted' |
         // Guild
-            'TeamMemberBanned' |
-            'TeamMemberUnbanned' | 
-            'TeamMemberJoined' | 
-            'TeamMemberRemoved' | 
-            'TeamMemberUpdated' |
-            "teamRolesUpdated" | 
+            'ServerMemberBanned' |
+            'ServerMemberUnbanned' | 
+            'ServerMemberJoined' | 
+            'ServerMemberRemoved' | 
+            'ServerMemberUpdated' |
+            "ServerRolesUpdated" | 
         // Webhook
-            'TeamWebhookCreated' |
-            'TeamWebhookUpdated' |
+            'ServerWebhookCreated' |
+            'ServerWebhookUpdated' |
         // Doc
             'DocCreated' |
             'DocUpdated' |
