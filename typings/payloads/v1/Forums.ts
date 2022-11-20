@@ -2,17 +2,19 @@ import { APIMentions } from "./Chat"
 
 export interface APIForumTopicComment {
     /** The ID of the forum topic comment */
-    id: number,
+    id: number;
     /** The content of the forum topic comment */
-    content: string,
+    content: string;
     /** The ISO 8601 timestamp that the forum topic comment was created at */
-    createdAt: string
+    createdAt: string;
     /** The ISO 8601 timestamp that the forum topic comment was updated at, if relevant */
-    updatedAt?: string,
+    updatedAt?: string;
     /** The ID of the forum topic */
-    forumTopicId: number,
+    channelId: string;
+    /** The ID of the forum topic */
+    forumTopicId: number;
     /** The ID of the user who created this forum topic comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
-    createdBy: string
+    createdBy: string;
 }
 
 export interface APIForumTopic {
