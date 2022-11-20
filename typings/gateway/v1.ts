@@ -1,57 +1,62 @@
 export const GatewayVersion = "1";
 export const GatewayURL = `wss://www.guilded.gg/websocket/v${GatewayVersion}`;
 
-export type GatewayEvents = 
+export const GatewayEvents = {
         // Misc
-            'BotServerMembershipCreated' |
+        BotServerMembershipCreated: "BotServerMembershipCreated",
         // Message
-            'ChatMessageCreated' |
-            'ChatMessageUpdated' |
-            'ChatMessageDeleted' |
-            'ChannelMessageReactionCreated' |
-            'ChannelMessageReactionDeleted' |
+        ChatMessageCreated: "ChatMessageCreated",
+        ChatMessageUpdated: "ChatMessageUpdated",
+        ChatMessageDeleted: "ChatMessageDeleted",
+        ChannelMessageReactionCreated: "ChannelMessageReactionCreated",
+        ChannelMessageReactionDeleted: "ChannelMessageReactionDeleted",
         // Channel 
-            'ServerChannelCreated' |
-            'ServerChannelUpdated' |
-            'ServerChannelDeleted' |
+        ServerChannelCreated: "ServerChannelCreated",
+        ServerChannelUpdated: "ServerChannelUpdated",
+        ServerChannelDeleted: "ServerChannelDeleted",
         // Forum Topic
-            'ForumTopicCreated' |
-            'ForumTopicUpdated' |
-            'ForumTopicDeleted' |
-            'ForumTopicPinned' | 
-            'ForumTopicUnpinned' | 
-            'ForumTopicReactionCreated' |
-            'ForumTopicReactionDeleted' |
-            'ForumTopicCommentCreated' |
-            'ForumTopicCommentUpdated' |
-            'ForumTopicCommentDeleted' |
+        ForumTopicCreated: "ForumTopicCreated",
+        ForumTopicUpdated: "ForumTopicUpdated",
+        ForumTopicDeleted: "ForumTopicDeleted",
+        ForumTopicPinned: "ForumTopicPinned", 
+        ForumTopicUnpinned: "ForumTopicUnpinned", 
+        ForumTopicReactionCreated: "ForumTopicReactionCreated",
+        ForumTopicReactionDeleted: "ForumTopicReactionDeleted",
+        ForumTopicCommentCreated: "ForumTopicCommentCreated",
+        ForumTopicCommentUpdated: "ForumTopicCommentUpdated",
+        ForumTopicCommentDeleted: "ForumTopicCommentDeleted",
+        ForumTopicLocked: "ForumTopicLocked",
+        ForumTopicUnlocked: "ForumTopicUnlocked",
         // Guild
-            'ServerMemberBanned' |
-            'ServerMemberUnbanned' | 
-            'ServerMemberJoined' | 
-            'ServerMemberRemoved' | 
-            'ServerMemberUpdated' |
-            "ServerRolesUpdated" | 
+        ServerMemberBanned: "ServerMemberBanned",
+        ServerMemberUnbanned: "ServerMemberUnbanned", 
+        ServerMemberJoined: "ServerMemberJoined", 
+        ServerMemberRemoved: "ServerMemberRemoved", 
+        ServerMemberUpdated: "ServerMemberUpdated",
+        ServerRolesUpdated: "ServerRolesUpdated",  
         // Webhook
-            'ServerWebhookCreated' |
-            'ServerWebhookUpdated' |
+        ServerWebhookCreated: "ServerWebhookCreated",
+        ServerWebhookUpdated: "ServerWebhookUpdated",
         // Doc
-            'DocCreated' |
-            'DocUpdated' |
-            'DocDeleted' |
+        DocCreated: "DocCreated",
+        DocUpdated: "DocUpdated",
+        DocDeleted: "DocDeleted",
         // Calendar
-            'CalendarEventCreated' |
-            'CalendarEventUpdated' |
-            'CalendarEventDeleted' |
-            'CalendarEventRsvpUpdated' |
-            'CalendarEventRsvpDeleted' |
-            "CalendarEventRsvpManyUpdated" |
+        CalendarEventCreated: "CalendarEventCreated",
+        CalendarEventUpdated: "CalendarEventUpdated",
+        CalendarEventDeleted: "CalendarEventDeleted",
+        CalendarEventRsvpUpdated: "CalendarEventRsvpUpdated",
+        CalendarEventRsvpDeleted: "CalendarEventRsvpDeleted",
+        CalendarEventRsvpManyUpdated: "CalendarEventRsvpManyUpdated", 
         // List
-            'ListItemCreated' |
-            'ListItemUpdated' |
-            'ListItemDeleted' |
-            'ListItemCompleted' |
-            'ListItemUncompleted'
+        ListItemCreated: "ListItemCreated",
+        ListItemUpdated: "ListItemUpdated",
+        ListItemDeleted: "ListItemDeleted",
+        ListItemCompleted: "ListItemCompleted",
+        ListItemUncompleted: "ListItemUncompleted",
+} as const;
+
+export type GATEWAY_EVENTS = typeof GatewayEvents;
 
 export interface GatewayStructure {
     /** OP Code */
@@ -102,3 +107,54 @@ export enum GatewayOPCodes {
     Failure = 8,
     Success = 9
 };
+
+// Endpoints (credits to TouchGuild)
+export const CHANNELS = () => `/channels`;
+export const CHANNEL = (channelID: string) => `/channels/${channelID}`;
+
+export const GUILD = (guildID: string) => `/servers/${guildID}`;
+
+export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/messages`;
+export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
+export const CHANNEL_MESSAGE_CONTENT_EMOTE = (channelID: string, messageID: string, emoteID: number) => `/channels/${channelID}/content/${messageID}/emotes/${emoteID}`;
+
+export const MEMBER_NICKNAME = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/nickname`;
+
+export const GUILD_MEMBER = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}`;
+export const GUILD_MEMBER_XP = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/xp`;
+export const GUILD_MEMBERS = (guildID: string) => `/servers/${guildID}/members`;
+export const GUILD_MEMBER_SOCIALS = (guildID: string, memberID: string, type: string) => `/servers/${guildID}/members/${memberID}/social-links/${type}`;
+
+export const GUILD_GROUP_MEMBER = (groupID: string, memberID: string) => `/groups/${groupID}/members/${memberID}`;
+export const GUILD_GROUP_MEMBERS = (groupID: string) => `/groups/${groupID}/members/`;
+export const GUILD_GROUP = (groupID: string) => `/groups/${groupID}`;
+
+export const GUILD_BAN = (guildID: string, memberID: string) => `/servers/${guildID}/bans/${memberID}`;
+export const GUILD_BANS = (guildID: string) => `/servers/${guildID}/bans`;
+
+export const GUILD_MEMBER_ROLE = (guildID: string, memberID: string, roleID: number) => `/servers/${guildID}/members/${memberID}/roles/${roleID}`;
+export const GUILD_MEMBER_ROLE_XP = (guildID: string, roleID: number) => `/servers/${guildID}/roles/${roleID}/xp`;
+export const GUILD_MEMBER_ROLES = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/roles`;
+
+export const FORUM_TOPICS = (channelID: string) => `/channels/${channelID}/topics`;
+export const FORUM_TOPIC = (channelID: string, topicID: number) => `/channels/${channelID}/topics/${topicID}`;
+export const FORUM_TOPIC_PIN = (channelID: string, topicID: number) => `/channels/${channelID}/topics/${topicID}/pin`;
+export const FORUM_TOPIC_LOCK = (channelID: string, topicID: number) => `/channels/${channelID}/topics/${topicID}/lock`;
+export const FORUM_TOPIC_EMOTE = (channelID: string, topicID: number, emoteID: number) => `/channels/${channelID}/topics/${topicID}/emotes/${emoteID}`;
+export const FORUM_TOPIC_COMMENTS = (channelID: string, topicID: number) => `/channels/${channelID}/topics/${topicID}/comments`;
+export const FORUM_TOPIC_COMMENT = (channelID: string, topicID: number, commentID: number) => `/channels/${channelID}/topics/${topicID}/comments/${commentID}`;
+
+export const LIST_ITEMS = (channelID: string)=> `/channels/${channelID}/items`;
+export const LIST_ITEM = (channelID: string, itemID: string)=> `/channels/${channelID}/items/${itemID}`;
+export const LIST_ITEM_COMPLETE = (channelID: string, itemID: string)=> `/channels/${channelID}/items/${itemID}/complete`;
+
+export const CHANNEL_DOCS = (channelID: string)=> `/channels/${channelID}/docs`;
+export const CHANNEL_DOC = (channelID: string, docID: number)=> `/channels/${channelID}/docs/${docID}`;
+
+export const CHANNEL_EVENTS = (channelID: string)=> `/channels/${channelID}/events`;
+export const CHANNEL_EVENT = (channelID: string, eventID: number)=> `/channels/${channelID}/events/${eventID}`;
+export const CHANNEL_EVENT_RSVP = (channelID: string, eventID: number, memberID: string)=> `/channels/${channelID}/events/${eventID}/rsvps/${memberID}`;
+export const CHANNEL_EVENT_RSVPS = (channelID: string, eventID: number)=> `/channels/${channelID}/events/${eventID}/rsvps`;
+
+export const GUILD_WEBHOOKS = (guildID: string)=> `/servers/${guildID}/webhooks`;
+export const GUILD_WEBHOOK = (guildID: string, webhookID: string)=> `/servers/${guildID}/webhooks/${webhookID}`;
