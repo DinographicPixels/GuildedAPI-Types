@@ -16,7 +16,7 @@ export interface APIForumTopicComment {
     /** The ID of the user who created this forum topic comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
     createdBy: string;
     /** Mentions included in the topic comment. */
-    mentions: APIMentions;
+    mentions?: APIMentions;
 }
 
 export interface APIForumTopic {
