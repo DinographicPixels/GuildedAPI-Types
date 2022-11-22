@@ -15,35 +15,37 @@ export interface APIForumTopicComment {
     forumTopicId: number;
     /** The ID of the user who created this forum topic comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
     createdBy: string;
+    /** Mentions included in the topic comment. */
+    mentions: APIMentions;
 }
 
 export interface APIForumTopic {
     /** The ID of the forum topic */
-    id: number,
+    id: number;
     /** The ID of the server */
-    serverId: string,
+    serverId: string;
     /** The ID of the channel */
-    channelId: string,
+    channelId: string;
     /** The title of the forum topic (min length 1; max length 500) */
-    title: string,
+    title: string;
     /** The ISO 8601 timestamp that the forum topic was created at */
-    createdAt: string,
+    createdAt: string;
     /** The ID of the user who created this forum topic (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
-    createdBy: string,
+    createdBy: string;
     /** The ID of the webhook who created this forum topic, if it was created by a webhook */
-    createdByWebhookId?: string,
+    createdByWebhookId?: string;
     /** The ISO 8601 timestamp that the forum topic was updated at, if relevant */
-    updatedAt?: string,
+    updatedAt?: string;
     /** The ISO 8601 timestamp that the forum topic was bumped at. This timestamp is updated whenever there is any activity on the posts within the forum topic. */
-    bumpedAt?: string,
+    bumpedAt?: string;
     /** (default `false`)  */
-    isPinned?: boolean,
+    isPinned?: boolean;
     /** (default `false`) */
-    isLocked?: boolean,
+    isLocked?: boolean;
     /** The content of the forum topic */
-    content: string,
+    content: string;
     /** Forum topic's mentions */
-    mentions?: APIMentions
+    mentions?: APIMentions;
 }
 
 export interface APIForumTopicSummary {
