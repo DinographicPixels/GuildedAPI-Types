@@ -4,6 +4,7 @@ export const GatewayURL = `wss://www.guilded.gg/websocket/v${GatewayVersion}`;
 export const GatewayEvents = {
         // Misc
         BotServerMembershipCreated: "BotServerMembershipCreated",
+        BotServerMembershipDeleted: "BotServerMembershipDeleted",
         // Message
         ChatMessageCreated: "ChatMessageCreated",
         ChatMessageUpdated: "ChatMessageUpdated",

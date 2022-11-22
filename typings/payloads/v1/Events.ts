@@ -15,6 +15,12 @@ export interface GatewayEvent_BotServerMembershipCreated {
     createdBy: string
 }
 
+export interface GatewayEvent_BotServerMembershipDeleted {
+    server: APIGuild,
+    /** The ID of the user who deleted this server membership */
+    createdBy: string
+}
+
 export interface GatewayEvent_ChatMessageCreated {
     /** The ID of the server */
     serverId: string,
