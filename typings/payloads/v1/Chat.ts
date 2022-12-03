@@ -76,11 +76,11 @@ export interface APIEmbedOptions {
 
 export declare type APIMentions = {
     /** Info on mentioned users (min items 1) */
-    users?: { id: string },
+    users?: Array<{ id: string }>,
     /** Info on mentioned channels (min items 1)  */
-    channels?: { id: string },
+    channels?: Array<{ id: string }>,
     /** Info on mentioned roles (min items 1) */
-    roles?: { id: number },
+    roles?: Array<{ id: number }>,
     /** If @everyone was mentioned */
     everyone?: boolean,
     /** If @here was mentioned */
