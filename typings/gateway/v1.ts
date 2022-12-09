@@ -26,6 +26,8 @@ export const GatewayEvents = {
         ForumTopicCommentCreated: "ForumTopicCommentCreated",
         ForumTopicCommentUpdated: "ForumTopicCommentUpdated",
         ForumTopicCommentDeleted: "ForumTopicCommentDeleted",
+        ForumTopicCommentReactionCreated: "ForumTopicCommentReactionCreated",
+        ForumTopicCommentReactionDeleted: "ForumTopicCommentReactionDeleted",
         ForumTopicLocked: "ForumTopicLocked",
         ForumTopicUnlocked: "ForumTopicUnlocked",
         // Guild

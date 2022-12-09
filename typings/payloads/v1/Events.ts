@@ -224,6 +224,38 @@ export interface GatewayEvent_ForumTopicReactionDeleted {
     }
 }
 
+export interface GatewayEvent_ForumTopicCommentReactionCreated {
+    /** The ID of the server */
+    serverId?: string;
+    reaction: {
+        /** The ID of the channel */
+        channelId: string;
+        /** The ID of the user who added the reaction */
+        createdBy: string;
+        emote: APIEmote;
+        /** The ID of the forum topic */
+        forumTopicId: number
+        /** The ID of the forum topic comment */
+        forumTopicCommentId: number;
+    }
+}
+
+export interface GatewayEvent_ForumTopicCommentReactionDeleted {
+    /** The ID of the server */
+    serverId?: string;
+    reaction: {
+        /** The ID of the channel */
+        channelId: string;
+        /** The ID of the user who added the reaction */
+        createdBy: string;
+        emote: APIEmote;
+        /** The ID of the forum topic */
+        forumTopicId: number
+        /** The ID of the forum topic comment */
+        forumTopicCommentId: number;
+    }
+}
+
 export interface GatewayEvent_ForumTopicLocked {
     /** The ID of the server */
     serverId?: string,
