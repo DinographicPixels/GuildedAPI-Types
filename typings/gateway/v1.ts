@@ -168,6 +168,8 @@ export const CHANNEL_EVENT_EMOTES = (channelID: string, eventID: number)=> `/cha
 export const CHANNEL_EVENT_EMOTE = (channelID: string, eventID: number, emoteID: number)=> `/channels/${channelID}/events/${eventID}/emotes/${emoteID}`;
 export const CHANNEL_EVENT_RSVP = (channelID: string, eventID: number, memberID: string)=> `/channels/${channelID}/events/${eventID}/rsvps/${memberID}`;
 export const CHANNEL_EVENT_RSVPS = (channelID: string, eventID: number)=> `/channels/${channelID}/events/${eventID}/rsvps`;
+export const CHANNEL_EVENT_COMMENT_EMOTES = (channelID: string, eventID: number, commentID: number)=> `/channels/${channelID}/events/${eventID}/comments/${commentID}/emotes`;
+export const CHANNEL_EVENT_COMMENT_EMOTE = (channelID: string, eventID: number, commentID: number, emoteID: number)=> `/channels/${channelID}/events/${eventID}/comments/${commentID}/emotes/${emoteID}`;
 
 
 export const GUILD_WEBHOOKS = (guildID: string)=> `/servers/${guildID}/webhooks`;
