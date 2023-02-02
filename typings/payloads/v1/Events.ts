@@ -304,6 +304,66 @@ export interface GatewayEvent_CalendarEventRsvpDeleted {
     calendarEventRsvp: APICalendarEventRSVP
 }
 
+export interface GatewayEvent_CalendarEventReactionCreated {
+    serverId?: string;
+    reaction: {
+        /** The ID of the channel */
+        channelId: string,
+        /** The ID of the user who added the reaction */
+        createdBy: string,
+        /** Emote */
+        emote: APIEmote,
+        /** The ID of the calendar event (min 1) */
+        calendarEventId: number;
+    }    
+}
+
+export interface GatewayEvent_CalendarEventReactionDeleted {
+    serverId?: string;
+    reaction: {
+        /** The ID of the channel */
+        channelId: string,
+        /** The ID of the user who added the reaction */
+        createdBy: string,
+        /** Emote */
+        emote: APIEmote,
+        /** The ID of the calendar event (min 1) */
+        calendarEventId: number;
+    }    
+}
+
+export interface GatewayEvent_CalendarEventCommentReactionCreated {
+    serverId?: string;
+    reaction: {
+        /** The ID of the channel */
+        channelId: string;
+        /** The ID of the user who added the reaction */
+        createdBy: string;
+        /** Emote */
+        emote: APIEmote;
+        /** The ID of the calendar event (min 1) */
+        calendarEventId: number;
+        /** The ID of the calendar event comment (min 1) */
+        calendarEventCommentId: number;
+    }
+}
+
+export interface GatewayEvent_CalendarEventCommentReactionDeleted {
+    serverId?: string;
+    reaction: {
+        /** The ID of the channel */
+        channelId: string;
+        /** The ID of the user who added the reaction */
+        createdBy: string;
+        /** Emote */
+        emote: APIEmote;
+        /** The ID of the calendar event (min 1) */
+        calendarEventId: number;
+        /** The ID of the calendar event comment (min 1) */
+        calendarEventCommentId: number;
+    }
+}
+
 export interface GatewayEvent_ListItemCreated {
     /** The ID of the server */
     serverId: string

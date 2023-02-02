@@ -13,7 +13,7 @@ export interface APIForumTopicComment {
     channelId: string;
     /** The ID of the forum topic */
     forumTopicId: number;
-    /** The ID of the user who created this forum topic comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
+    /** The ID of the user who created this forum topic comment. */
     createdBy: string;
     /** Mentions included in the topic comment. */
     mentions?: APIMentions;
@@ -30,10 +30,8 @@ export interface APIForumTopic {
     title: string;
     /** The ISO 8601 timestamp that the forum topic was created at */
     createdAt: string;
-    /** The ID of the user who created this forum topic (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
+    /** The ID of the user who created this forum topic. */
     createdBy: string;
-    /** The ID of the webhook who created this forum topic, if it was created by a webhook */
-    createdByWebhookId?: string;
     /** The ISO 8601 timestamp that the forum topic was updated at, if relevant */
     updatedAt?: string;
     /** The ISO 8601 timestamp that the forum topic was bumped at. This timestamp is updated whenever there is any activity on the posts within the forum topic. */
@@ -50,25 +48,23 @@ export interface APIForumTopic {
 
 export interface APIForumTopicSummary {
     /** The ID of the forum topic */
-    id: number,
+    id: number;
     /** The ID of the server */
-    serverId: string,
+    serverId: string;
     /** The ID of the channel */
-    channelId: string,
+    channelId: string;
     /** The title of the forum topic (min length 1; max length 500) */
-    title: string,
+    title: string;
     /** The ISO 8601 timestamp that the forum topic was created at */
-    createdAt: string,
-    /** The ID of the user who created this forum topic (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
-    createdBy: string,
-    /** The ID of the webhook who created this forum topic, if it was created by a webhook */
-    createdByWebhookId?: string,
+    createdAt: string;
+    /** The ID of the user who created this forum topic */
+    createdBy: string;
     /** The ISO 8601 timestamp that the forum topic was updated at, if relevant */
     updatedAt?: string,
     /** The ISO 8601 timestamp that the forum topic was bumped at. This timestamp is updated whenever there is any activity on the posts within the forum topic. */
-    bumpedAt?: string,
+    bumpedAt?: string;
     /** (default `false`) */
-    isPinned?: boolean,
+    isPinned?: boolean;
     /** (default `false`) */
-    isLocked?: boolean,
+    isLocked?: boolean;
 }

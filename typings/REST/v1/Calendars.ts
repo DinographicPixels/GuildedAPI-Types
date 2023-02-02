@@ -1,4 +1,4 @@
-import { APICalendarEvent, APICalendarEventRSVP, APICalendarEventRSVPStatuses } from "../../payloads"
+import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventRSVPStatuses } from "../../payloads"
 
 export interface POSTCalendarEventBody {
     /** The name of the event (min length `1`; max length `60`) */
@@ -35,11 +35,14 @@ export interface GETCalendarEventsQuery {
     limit?: number
 }
 
+// no body for GETCalendarEvents
+
 export interface GETCalendarEventsResponse {
     calendarEvents: Array<APICalendarEvent>
 }
 
 
+// no body for GETCalendarEvent
 
 export interface GETCalendarEventResponse {
     calendarEvent: APICalendarEvent
@@ -67,11 +70,14 @@ export interface PATCHCalendarEventBody {
         isPrivate?: boolean
 }
 
+// no body for PATCHCalendarEvent
+
 export interface PATCHCalendarEventResponse {
     calendarEvent: APICalendarEvent
 }
 
 
+// no body for GETCalendarEventRSVP
 
 export interface GETCalendarEventRSVPResponse {
     calendarEventRsvp: APICalendarEventRSVP
@@ -89,7 +95,42 @@ export interface PUTCalendarEventRSVPResponse {
 }
 
 
+// no body for GETCalendarEventRSVPS
 
 export interface GETCalendarEventRSVPSResponse {
     calendarEventRsvps: Array<APICalendarEventRSVP>
+}
+
+
+
+
+export interface POSTCalendarEventCommentBody {
+    /** The content of the forum topic */
+    content: string;
+}
+
+export interface POSTCalendarEventCommentResponse {
+    calendarEventComment: APICalendarEventComment;
+}
+
+// no body for GETCalendarEventComments
+
+export interface GETCalendarEventCommentsResponse {
+    calendarEventComments: Array<APICalendarEventComment>;
+}
+
+
+// no body for GETCalendarEventComment
+
+export interface GETCalendarEventCommentResponse {
+    calendarEventComment: APICalendarEventComment;
+}
+
+export interface PATCHCalendarEventCommentBody {
+    /** The content of the forum topic */
+    content: string;
+}
+
+export interface PATCHCalendarEventCommentResponse {
+    calendarEventComment: APICalendarEventComment;
 }

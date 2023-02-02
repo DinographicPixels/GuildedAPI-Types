@@ -55,12 +55,7 @@ export interface APIGuildMemberBan {
 }
 
 
-export interface APIBotUser {
-    user: {
-        id: string,
-        botId: string,
-        name: string,
-        createdAt: string,
-        createdBy: string
-    }
+export interface APIBotUser extends APIUser {
+    botId: string;
+    createdBy: string;
 }
