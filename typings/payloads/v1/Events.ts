@@ -1,4 +1,4 @@
-import { APICalendarEvent, APICalendarEventRSVP } from "./Calendars";
+import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP } from "./Calendars";
 import { APIGuildChannel } from "./Channels";
 import { APIChatMessage } from "./Chat";
 import { APIDoc } from "./Docs";
@@ -223,6 +223,19 @@ export interface GatewayEvent_ForumTopicReactionDeleted {
         forumTopicId: number
     }
 }
+
+export interface GatewayEvent_CalendarEventCommentCreated {
+    /** The ID of the server. */
+    serverId: string;
+    comment: APICalendarEventComment;
+}
+
+export interface GatewayEvent_CalendarEventCommentDeleted {
+    /** The ID of the server. */
+    serverId: string;
+    comment: APICalendarEventComment;
+}
+
 
 export interface GatewayEvent_ForumTopicCommentReactionCreated {
     /** The ID of the server */

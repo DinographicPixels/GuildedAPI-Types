@@ -53,6 +53,8 @@ export const GatewayEvents = {
         CalendarEventRsvpManyUpdated: "CalendarEventRsvpManyUpdated", 
         CalendarEventReactionCreated: "CalendarEventReactionCreated",
         CalendarEventReactionDeleted: "CalendarEventReactionDeleted",
+        CalendarEventCommentCreated: "CalendarEventCommentCreated",
+        CalendarEventCommentDeleted: "CalendarEventCommentDeleted",
         CalendarEventCommentReactionCreated: "CalendarEventCommentReactionCreated",
         CalendarEventCommentReactionDeleted: "CalendarEventCommentReactionDeleted",
         // List
