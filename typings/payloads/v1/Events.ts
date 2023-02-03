@@ -227,19 +227,19 @@ export interface GatewayEvent_ForumTopicReactionDeleted {
 export interface GatewayEvent_CalendarEventCommentCreated {
     /** The ID of the server. */
     serverId: string;
-    comment: APICalendarEventComment;
+    calendarEventComment: APICalendarEventComment;
 }
 
 export interface GatewayEvent_CalendarEventCommentUpdated {
     /** The ID of the server. */
     serverId: string;
-    comment: APICalendarEventComment;
+    calendarEventComment: APICalendarEventComment;
 }
 
 export interface GatewayEvent_CalendarEventCommentDeleted {
     /** The ID of the server. */
     serverId: string;
-    comment: APICalendarEventComment;
+    calendarEventComment: APICalendarEventComment;
 }
 
 
