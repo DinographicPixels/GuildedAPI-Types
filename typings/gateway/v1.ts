@@ -54,6 +54,7 @@ export const GatewayEvents = {
         CalendarEventReactionCreated: "CalendarEventReactionCreated",
         CalendarEventReactionDeleted: "CalendarEventReactionDeleted",
         CalendarEventCommentCreated: "CalendarEventCommentCreated",
+        CalendarEventCommentUpdated: "CalendarEventCommentUpdated",
         CalendarEventCommentDeleted: "CalendarEventCommentDeleted",
         CalendarEventCommentReactionCreated: "CalendarEventCommentReactionCreated",
         CalendarEventCommentReactionDeleted: "CalendarEventCommentReactionDeleted",

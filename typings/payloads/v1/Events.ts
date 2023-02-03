@@ -230,6 +230,12 @@ export interface GatewayEvent_CalendarEventCommentCreated {
     comment: APICalendarEventComment;
 }
 
+export interface GatewayEvent_CalendarEventCommentUpdated {
+    /** The ID of the server. */
+    serverId: string;
+    comment: APICalendarEventComment;
+}
+
 export interface GatewayEvent_CalendarEventCommentDeleted {
     /** The ID of the server. */
     serverId: string;
