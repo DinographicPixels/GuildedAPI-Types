@@ -174,6 +174,8 @@ export const LIST_ITEM_COMPLETE = (channelID: string, itemID: string)=> `/channe
 
 export const CHANNEL_DOCS = (channelID: string)=> `/channels/${channelID}/docs`;
 export const CHANNEL_DOC = (channelID: string, docID: number)=> `/channels/${channelID}/docs/${docID}`;
+export const CHANNEL_DOC_EMOTES = (channelID: string, docID: number)=> `/channels/${channelID}/docs/${docID}/emotes`;
+export const CHANNEL_DOC_EMOTE = (channelID: string, docID: number, emoteID: number)=> `/channels/${channelID}/docs/${docID}/emote/${emoteID}`;
 export const CHANNEL_DOC_COMMENTS = (channelID: string, docID: number)=> `/channels/${channelID}/docs/${docID}/comments`;
 export const CHANNEL_DOC_COMMENT = (channelID: string, docID: number, commentID: number)=> `/channels/${channelID}/docs/${docID}/comments/${commentID}`;
 
