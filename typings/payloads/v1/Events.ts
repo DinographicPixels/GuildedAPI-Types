@@ -298,7 +298,7 @@ export interface GatewayEvent_CalendarEventCommentDeleted {
 export interface GatewayEvent_ForumTopicCommentReactionCreated {
     /** The ID of the server */
     serverId?: string;
-    reaction: GatewayEvent_ForumTopicCommentReactionCreated;
+    reaction: APIForumTopicCommentReaction;
 }
 
 export interface GatewayEvent_ForumTopicCommentReactionDeleted {
