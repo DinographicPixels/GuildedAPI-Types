@@ -22,3 +22,21 @@ export interface APIDoc {
     /** The ID of the user who updated this doc */
     updatedBy?: string
 }
+
+export interface APIDocComment {
+    /** The ID of the doc comment */
+    id: number;
+    /** The content of the doc comment (min length 1; max length 10000) */
+    content: string;
+    /** The ISO 8601 timestamp that the doc comment was created at */
+    createdAt: string;
+    /** The ID of the user who created this doc comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
+    createdBy: string;
+    /** The ISO 8601 timestamp that the doc comment was updated at, if relevant */
+    updatedAt?: string;
+    /** The ID of the channel */
+    channelId: string;
+    /** The ID of the doc (min 1) */
+    docId: number;
+    mentions?: APIMentions;
+}

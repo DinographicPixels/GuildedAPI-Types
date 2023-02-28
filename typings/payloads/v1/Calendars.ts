@@ -79,3 +79,12 @@ export interface APICalendarEventComment {
     /** The ID of the user who created this calendar event comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
     createdBy: string;
 }
+
+export interface APICalendarEventSeries {
+    /** The ID of the calendar event series  */
+    id: string;
+    /** The ID of the server */
+    serverId: string;
+    /** The ID of the channel */
+    channelId: string;
+}

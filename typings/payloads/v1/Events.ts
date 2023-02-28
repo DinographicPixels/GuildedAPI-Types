@@ -1,12 +1,13 @@
-import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP } from "./Calendars";
+import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventSeries } from "./Calendars";
 import { APIGuildChannel } from "./Channels";
 import { APIChatMessage } from "./Chat";
-import { APIDoc } from "./Docs";
-import { APIEmote } from "./Emotes";
+import { APIDoc, APIDocComment } from "./Docs";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
 import { APIGuild } from "./Guilds";
 import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
+import { APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
+import { APISocialLink } from "./Socials";
 import { APIWebhook } from "./Webhooks";
 
 export interface GatewayEvent_BotServerMembershipCreated {
@@ -118,6 +119,24 @@ export interface GatewayEvent_ServerChannelDeleted {
     channel: APIGuildChannel
 }
 
+export interface GatewayEvent_ServerMemberSocialLinkCreated {
+    /** The ID of the server */
+    serverId: string;
+    socialLink: APISocialLink;
+}
+
+export interface GatewayEvent_ServerMemberSocialLinkUpdated {
+    /** The ID of the server */
+    serverId: string;
+    socialLink: APISocialLink;
+}
+
+export interface GatewayEvent_ServerMemberSocialLinkDeleted {
+    /** The ID of the server */
+    serverId: string;
+    socialLink: APISocialLink;
+}
+
 export interface GatewayEvent_ServerWebhookCreated {
     /** The ID of the server */
     serverId: string,
@@ -146,6 +165,56 @@ export interface GatewayEvent_DocDeleted {
     /** The ID of the server */
     serverId: string,
     doc: APIDoc
+}
+
+export interface GatewayEvent_DocReactionCreated {
+    /** The ID of the server */
+    serverId: string;
+    reaction: APIDocReaction;
+}
+
+export interface GatewayEvent_DocReactionDeleted {
+    /** The ID of the server */
+    serverId: string;
+    reaction: APIDocReaction;
+}
+
+export interface GatewayEvent_DocCommentCreated {
+    /** The ID of the server */
+    serverId: string;
+    docComment: APIDocComment;
+}
+
+export interface GatewayEvent_DocCommentUpdated {
+    /** The ID of the server */
+    serverId: string;
+    docComment: APIDocComment;
+}
+
+export interface GatewayEvent_DocCommentDeleted {
+    /** The ID of the server */
+    serverId: string;
+    docComment: APIDocComment;
+}
+
+export interface GatewayEvent_DocCommentReactionCreated {
+    /** The ID of the server */
+    serverId: string;
+    reaction: APIDocCommentReaction;
+}
+
+export interface GatewayEvent_DocCommentReactionDeleted {
+    /** The ID of the server */
+    serverId: string;
+    reaction: APIDocCommentReaction;
+}
+
+export interface GatewayEvent_CalendarEventSeriesUpdated {
+    /** The ID of the server */
+    serverId: string;
+    calendarEventSeries: APICalendarEventSeries;
+    /** The calendar event updates started at */
+    calendarEventId?: number;
 }
 
 export interface GatewayEvent_CalendarEventCreated {
@@ -199,29 +268,13 @@ export interface GatewayEvent_ForumTopicUnpinned {
 export interface GatewayEvent_ForumTopicReactionCreated {
     /** The ID of the server */
     serverId?: string,
-    reaction: {
-        /** The ID of the channel */
-        channelId: string,
-        /** The ID of the user who added the reaction */
-        createdBy: string,
-        emote: APIEmote,
-        /** The ID of the forum topic */
-        forumTopicId: number
-    }
+    reaction: APIForumTopicReaction;
 }
 
 export interface GatewayEvent_ForumTopicReactionDeleted {
     /** The ID of the server */
     serverId?: string,
-    reaction: {
-        /** The ID of the channel */
-        channelId: string,
-        /** The ID of the user who added the reaction */
-        createdBy: string,
-        emote: APIEmote,
-        /** The ID of the forum topic */
-        forumTopicId: number
-    }
+    reaction: APIForumTopicReaction;
 }
 
 export interface GatewayEvent_CalendarEventCommentCreated {
@@ -242,37 +295,16 @@ export interface GatewayEvent_CalendarEventCommentDeleted {
     calendarEventComment: APICalendarEventComment;
 }
 
-
 export interface GatewayEvent_ForumTopicCommentReactionCreated {
     /** The ID of the server */
     serverId?: string;
-    reaction: {
-        /** The ID of the channel */
-        channelId: string;
-        /** The ID of the user who added the reaction */
-        createdBy: string;
-        emote: APIEmote;
-        /** The ID of the forum topic */
-        forumTopicId: number
-        /** The ID of the forum topic comment */
-        forumTopicCommentId: number;
-    }
+    reaction: GatewayEvent_ForumTopicCommentReactionCreated;
 }
 
 export interface GatewayEvent_ForumTopicCommentReactionDeleted {
     /** The ID of the server */
     serverId?: string;
-    reaction: {
-        /** The ID of the channel */
-        channelId: string;
-        /** The ID of the user who added the reaction */
-        createdBy: string;
-        emote: APIEmote;
-        /** The ID of the forum topic */
-        forumTopicId: number
-        /** The ID of the forum topic comment */
-        forumTopicCommentId: number;
-    }
+    reaction: APIForumTopicCommentReaction;
 }
 
 export interface GatewayEvent_ForumTopicLocked {
@@ -325,62 +357,22 @@ export interface GatewayEvent_CalendarEventRsvpDeleted {
 
 export interface GatewayEvent_CalendarEventReactionCreated {
     serverId?: string;
-    reaction: {
-        /** The ID of the channel */
-        channelId: string,
-        /** The ID of the user who added the reaction */
-        createdBy: string,
-        /** Emote */
-        emote: APIEmote,
-        /** The ID of the calendar event (min 1) */
-        calendarEventId: number;
-    }    
+    reaction: APICalendarEventReaction; 
 }
 
 export interface GatewayEvent_CalendarEventReactionDeleted {
     serverId?: string;
-    reaction: {
-        /** The ID of the channel */
-        channelId: string,
-        /** The ID of the user who added the reaction */
-        createdBy: string,
-        /** Emote */
-        emote: APIEmote,
-        /** The ID of the calendar event (min 1) */
-        calendarEventId: number;
-    }    
+    reaction: APICalendarEventReaction;
 }
 
 export interface GatewayEvent_CalendarEventCommentReactionCreated {
     serverId?: string;
-    reaction: {
-        /** The ID of the channel */
-        channelId: string;
-        /** The ID of the user who added the reaction */
-        createdBy: string;
-        /** Emote */
-        emote: APIEmote;
-        /** The ID of the calendar event (min 1) */
-        calendarEventId: number;
-        /** The ID of the calendar event comment (min 1) */
-        calendarEventCommentId: number;
-    }
+    reaction: APICalendarEventCommentReaction;
 }
 
 export interface GatewayEvent_CalendarEventCommentReactionDeleted {
     serverId?: string;
-    reaction: {
-        /** The ID of the channel */
-        channelId: string;
-        /** The ID of the user who added the reaction */
-        createdBy: string;
-        /** Emote */
-        emote: APIEmote;
-        /** The ID of the calendar event (min 1) */
-        calendarEventId: number;
-        /** The ID of the calendar event comment (min 1) */
-        calendarEventCommentId: number;
-    }
+    reaction: APICalendarEventCommentReaction;
 }
 
 export interface GatewayEvent_ListItemCreated {
@@ -416,30 +408,12 @@ export interface GatewayEvent_ListItemUncompleted {
 export interface GatewayEvent_ChannelMessageReactionAdded {
     /** The ID of the server */
     serverId?: string
-    reaction: {
-        /** The ID of the channel */
-        channelId: string,
-        /** The ID of the user who added the reaction */
-        createdBy: string,
-        /** Emote */
-        emote: APIEmote,
-        /** The ID of the message */
-        messageId: string
-    }    
+    reaction: APIChatMessageReaction; 
 }
 
 export interface GatewayEvent_ChannelMessageReactionDeleted {
     /** The ID of the server */
     serverId?: string
-    reaction: {
-        /** The ID of the channel */
-        channelId: string,
-        /** The ID of the user who added the reaction */
-        createdBy: string,
-        /** Emote */
-        emote: APIEmote,
-        /** The ID of the message */
-        messageId: string
-    }    
+    reaction: APIChatMessageReaction;
 }
 

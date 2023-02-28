@@ -1,4 +1,4 @@
-import { APIDoc } from "../../payloads"
+import { APIDoc, APIDocComment } from "../../payloads"
 
 export interface POSTDocBody {
     /** The title of the doc (min length `1`) */
@@ -44,4 +44,36 @@ export interface PUTDocResponse {
 }
 
 
+export interface POSTDocCommentBody {
+    /** The content of the doc comment (min length 1; max length 10000) */
+    content: string;
+}
+
+export interface POSTDocCommentResponse {
+    docComment: APIDocComment;
+}
+
+
+// no body for GETDocComments
+
+export interface GETDocCommentsResponse {
+    docComments: Array<APIDocComment>;
+}
+
+
+// no body for GETDocComment
+
+export interface GETDocCommentResponse {
+    docComment: APIDocComment;
+}
+
+
+export interface PATCHDocCommentBody {
+    /** The content of the doc comment (min length 1; max length 10000) */
+    content: string;
+}
+
+export interface PATCHDocCommentResponse {
+    docComment: APIDocComment;
+}
 
