@@ -17,8 +17,12 @@ export interface APICalendarEvent {
     url?: string,
     /** The color of the event when viewing in the calendar (min 0; max 16777215) */
     color?: number,
+    /** Does the event last all day */
+    isAllDay?: boolean;
     /** The number of RSVPs to allow before waitlisting RSVPs (min 1) */
     rsvpLimit?: number,
+    /** When `rsvpLimit` is set, users from the waitlist will be added as space becomes available in the event */
+    autofillWaitlist?: boolean;
     /** The ISO 8601 timestamp that the event starts at */
     startsAt: string,
     /** The duration of the event in minutes (min 1) */
