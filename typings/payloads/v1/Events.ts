@@ -346,7 +346,7 @@ export interface GatewayEvent_CalendarEventRsvpUpdated {
 export interface GatewayEvent_CalendarEventRsvpManyUpdated {
     /** The ID of the server */
     serverId?: string,
-    calendarEventRsvp: Array<APICalendarEventRSVP>
+    calendarEventRsvps: Array<APICalendarEventRSVP>
 }
 
 export interface GatewayEvent_CalendarEventRsvpDeleted {
