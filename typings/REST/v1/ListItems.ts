@@ -27,15 +27,15 @@ export interface GETListItemResponse {
 
 
 
-export interface PUTListItemBody {
+export interface PATCHListItemBody {
     /** The message of the list item */
-    message: string,
+    message?: string,
     note?: {
         /** The note of the list item */
         content: string
     }
 }
 
-export interface PUTListItemResponse {
+export interface PATCHListItemResponse {
     listItem: APIListItem
 }
