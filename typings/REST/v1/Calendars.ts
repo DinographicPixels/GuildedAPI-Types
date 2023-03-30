@@ -114,6 +114,10 @@ export interface PATCHCalendarEventBody {
         /** Used to control the day of the week that the event should repeat on (only used when type is custom and when every.interval is week) (min items 1) */
         on?: Array<"sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday">;
     };
+    cancellation?: {
+        /** The description of event cancellation (min length 1; max length 140) */
+        description?: string,
+    }
 }
 
 // no body for PATCHCalendarEvent
