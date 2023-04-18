@@ -9,6 +9,12 @@ export const GatewayEvents = {
         ChatMessageCreated: "ChatMessageCreated",
         ChatMessageUpdated: "ChatMessageUpdated",
         ChatMessageDeleted: "ChatMessageDeleted",
+        AnnouncementCreated: "AnnouncementCreated",
+        AnnouncementUpdated: "AnnouncementUpdated",
+        AnnouncementDeleted: "AnnouncementDeleted",
+        AnnouncementCommentCreated: "AnnouncementCommentCreated",
+        AnnouncementCommentUpdated: "AnnouncementCommentUpdated",
+        AnnouncementCommentDeleted: "AnnouncementCommentDeleted",
         ChannelMessageReactionCreated: "ChannelMessageReactionCreated",
         ChannelMessageReactionDeleted: "ChannelMessageReactionDeleted",
         // Channel 
@@ -139,6 +145,14 @@ export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/m
 export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
 export const CHANNEL_MESSAGE_CONTENT_EMOTES = (channelID: string, messageID: string) => `/channels/${channelID}/content/${messageID}/emotes`;
 export const CHANNEL_MESSAGE_CONTENT_EMOTE = (channelID: string, messageID: string, emoteID: number) => `/channels/${channelID}/content/${messageID}/emotes/${emoteID}`;
+export const CHANNEL_ANNOUNCEMENTS = (channelID: string) => `/channels/${channelID}/announcements`;
+export const CHANNEL_ANNOUNCEMENT = (channelID: string, announcementID: string) => `/channels/${channelID}/announcements/${announcementID}`;
+export const CHANNEL_ANNOUNCEMENT_EMOTES = (channelID: string, announcementID: string) => `/channels/${channelID}/announcements/${announcementID}/emotes`;
+export const CHANNEL_ANNOUNCEMENT_EMOTE = (channelID: string, announcementID: string, emoteID: number) => `/channels/${channelID}/announcements/${announcementID}/emotes/${emoteID}`;
+export const CHANNEL_ANNOUNCEMENT_COMMENTS = (channelID: string, announcementID: string) => `/channels/${channelID}/announcements/${announcementID}/comments`;
+export const CHANNEL_ANNOUNCEMENT_COMMENT = (channelID: string, announcementID: string, commentID: number) => `/channels/${channelID}/announcements/${announcementID}/comments/${commentID}`;
+export const CHANNEL_ANNOUNCEMENT_COMMENT_EMOTES = (channelID: string, announcementID: string, commentID: number) => `/channels/${channelID}/announcements/${announcementID}/comments/${commentID}/emotes`;
+export const CHANNEL_ANNOUNCEMENT_COMMENT_EMOTE = (channelID: string, announcementID: string, commentID: number, emoteID: number) => `/channels/${channelID}/announcements/${announcementID}/comments/${commentID}/emotes/${emoteID}`;
 
 export const MEMBER_NICKNAME = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/nickname`;
 

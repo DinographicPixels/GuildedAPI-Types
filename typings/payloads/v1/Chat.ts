@@ -110,3 +110,39 @@ export type APIMessageOptions = {
     /** If set, this message will only be seen by those mentioned or replied to */
     isPrivate?: boolean
 }
+
+export interface APIAnnouncement {
+    /** The ID of the announcement */
+    id: string;
+    /** The ID of the server */
+    serverId: string;
+    /** The ID of the channel */
+    channelId: string;
+    /** The ISO 8601 timestamp that the announcement was created at */
+    createdAt: string;
+    /** The ID of the user who created this announcement */
+    createdBy: string;
+    /** The content of the announcement */
+    content: string;
+    mentions?: APIMentions;
+    /**The title of the announcement (min length `1`; max length `128`) */
+    title: string;
+};
+
+export interface APIAnnouncementComment {
+    /** The ID of the comment (min 1) */
+    id: string;
+    /** The content of the announcement comment (min length 1; max length 10000) */
+    content: string;
+    /** The ISO 8601 timestamp that the announcement comment was created at */
+    createdAt: string;
+    /** The ISO 8601 timestamp that the announcement comment was updated at, if relevant */
+    updatedAt?: string;
+    /** The ID of the user who created this announcement comment (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
+    createdBy: string;
+    /** The ID of the channel */
+    channelId: string;
+    /** The ID of the announcement */
+    announcementId: string;
+    mentions?: APIMentions;
+};

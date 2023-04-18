@@ -1,4 +1,4 @@
-import { APIChatMessage, APIChatMessageCategories, APIEmbedOptions, APIMentions } from "../../payloads/v1/Chat";
+import { APIAnnouncement, APIAnnouncementComment, APIChatMessage, APIChatMessageCategories, APIEmbedOptions, APIMentions } from "../../payloads/v1/Chat";
 
 export interface POSTChannelMessageBody {
     /** If set, this message will only be seen by those mentioned or replied to */
@@ -75,3 +75,92 @@ export interface PUTChannelMessageResponse {
         updatedAt: string
     }
 }
+
+export interface POSTChannelAnnouncementBody {
+    /** The title of the announcement (min length 1; max length 128) */
+    title: string;
+    /** The content of the announcement (min length 1; max length 100000) */
+    content: string;
+};
+
+// no body POSTChannelAnnouncement
+// no query POSTChannelAnnouncement
+
+export interface POSTChannelAnnouncementResponse {
+    announcement: APIAnnouncement;
+};
+
+// no body for GETChannelAnnouncements
+
+export interface GETChannelAnnouncementsQuery {
+    /** An ISO 8601 timestamp that will be used to filter out results for the current page */
+    before?: string;
+    /** The max size of the page (default 25; min 1; max 250) */
+    limit?: number;
+};
+
+export interface GETChannelAnnouncementsResponse {
+    announcements: Array<APIAnnouncement>;
+};
+
+// no query for GETChannelAnnouncement
+// no body for GETChannelAnnouncement
+
+export interface GETChannelAnnouncementResponse {
+    announcement: APIAnnouncement;
+};
+
+// no query for PATCHChannelAnnouncement
+
+export interface PATCHChannelAnnouncementBody {
+    /** The title of the announcement (min length 1; max length 128) */
+    title?: string;
+    /** The content of the announcement (min length 1; max length 100000) */
+    content?: string;
+};
+
+export interface PATCHChannelAnnouncementResponse {
+    announcement: APIAnnouncement;
+};
+
+
+// no body for DELETEChannelAnnouncement
+// no query for DELETEChannelAnnouncement
+// no response for DELETEChannelAnnouncement
+
+
+// no query for POSTChannelAnnouncementComment
+
+export interface POSTChannelAnnouncementCommentBody {
+    /** The content of the announcement comment (min length 1; max length 10000) */
+    content: string;
+};
+
+export interface POSTChannelAnnouncementCommentResponse {
+    announcementComment: APIAnnouncementComment;
+};
+
+
+// no body GETChannelAnnouncementComments
+// no query GETChannelAnnouncementComments
+export interface GETChannelAnnouncementCommentsResponse {
+    announcementComments: Array<APIAnnouncementComment>
+};
+
+
+// no body GETChannelAnnouncementComment
+// no query GETChannelAnnouncementComment
+export interface GETChannelAnnouncementCommentResponse {
+    announcementComment: APIAnnouncementComment;
+};
+
+
+// no query for PATCHChannelAnnouncementComment
+export interface PATCHChannelAnnouncementCommentBody {
+    /** The content of the announcement comment (min length 1; max length 10000) */
+    content: string;
+};
+
+export interface PATCHChannelAnnouncementCommentResponse {
+    announcementComment: APIAnnouncementComment;
+};

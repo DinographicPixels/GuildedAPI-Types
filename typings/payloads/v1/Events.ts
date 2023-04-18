@@ -1,12 +1,12 @@
 import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventSeries } from "./Calendars";
 import { APIGuildChannel } from "./Channels";
-import { APIChatMessage } from "./Chat";
+import { APIAnnouncement, APIChatMessage } from "./Chat";
 import { APIDoc, APIDocComment } from "./Docs";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
 import { APIGuild } from "./Guilds";
 import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
-import { APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
+import { APIAnnouncementCommentReaction, APIAnnouncementReaction, APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
 import { APISocialLink } from "./Socials";
 import { APIWebhook } from "./Webhooks";
 
@@ -49,6 +49,43 @@ export interface GatewayEvent_ChatMessageDeleted {
         isPrivate?: boolean
     }
 }
+
+export interface GatewayEvent_AnnouncementCreated {
+    /** The ID of the server */
+    serverId: string;
+    announcement: APIAnnouncement;
+};
+
+export interface GatewayEvent_AnnouncementUpdated {
+    /** The ID of the server */
+    serverId: string;
+    announcement: APIAnnouncement;
+};
+
+export interface GatewayEvent_AnnouncementDeleted {
+    /** The ID of the server */
+    serverId: string;
+    announcement: APIAnnouncement;
+};
+
+export interface GatewayEvent_AnnouncementCommentCreated {
+    /** The ID of the server */
+    serverId: string;
+    announcementComment: APIAnnouncement;
+};
+
+export interface GatewayEvent_AnnouncementCommentUpdated {
+    /** The ID of the server */
+    serverId: string;
+    announcementComment: APIAnnouncement;
+};
+
+export interface GatewayEvent_AnnouncementCommentDeleted {
+    /** The ID of the server */
+    serverId: string;
+    announcementComment: APIAnnouncement;
+};
+
 
 export interface GatewayEvent_ServerMemberJoined {
     /** The ID of the server */
@@ -417,3 +454,26 @@ export interface GatewayEvent_ChannelMessageReactionDeleted {
     reaction: APIChatMessageReaction;
 }
 
+export interface GatewayEvent_AnnouncementReactionCreated {
+    /** The ID of the server */
+    serverId?: string
+    reaction: APIAnnouncementReaction; 
+}
+
+export interface GatewayEvent_AnnouncementReactionDeleted {
+    /** The ID of the server */
+    serverId?: string
+    reaction: APIAnnouncementReaction; 
+}
+
+export interface GatewayEvent_AnnouncementCommentReactionCreated {
+    /** The ID of the server */
+    serverId?: string
+    reaction: APIAnnouncementCommentReaction; 
+}
+
+export interface GatewayEvent_AnnouncementCommentReactionDeleted {
+    /** The ID of the server */
+    serverId?: string
+    reaction: APIAnnouncementCommentReaction; 
+}

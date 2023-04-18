@@ -75,3 +75,25 @@ export interface APICalendarEventCommentReaction {
     /** The ID of the calendar event comment */
     calendarEventCommentId: number;
 }
+
+export interface APIAnnouncementReaction {
+    /** The ID of the channel */
+    channelId: string;
+    /** The ID of the user who added the reaction */
+    createdBy: string;
+    emote: APIEmote;
+    /** The ID of the announcement */
+    announcementId: string;
+};
+
+export interface APIAnnouncementCommentReaction {
+    /** The ID of the channel */
+    channelId: string;
+    /** The ID of the user who added the reaction */
+    createdBy: string;
+    emote: APIEmote;
+    /** The ID of the announcement */
+    announcementId: string;
+    /** The ID of the announcement comment */
+    announcementCommentId: number;
+};
