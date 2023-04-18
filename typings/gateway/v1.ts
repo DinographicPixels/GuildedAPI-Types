@@ -140,6 +140,7 @@ export const CHANNEL = (channelID: string) => `/channels/${channelID}`;
 
 export const GUILD = (guildID: string) => `/servers/${guildID}`;
 export const USER = (userID: string) => `/users/${userID}`;
+export const USER_SERVERS = (userID: string) => `/users/${userID}/servers`;
 
 export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/messages`;
 export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
@@ -211,4 +212,3 @@ export const CHANNEL_EVENT_EVENT_SERIES_ENTITY = (channelID: string, seriesID: s
 
 export const GUILD_WEBHOOKS = (guildID: string)=> `/servers/${guildID}/webhooks`;
 export const GUILD_WEBHOOK = (guildID: string, webhookID: string)=> `/servers/${guildID}/webhooks/${webhookID}`;
-
