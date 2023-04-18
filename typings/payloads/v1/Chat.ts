@@ -131,7 +131,7 @@ export interface APIAnnouncement {
 
 export interface APIAnnouncementComment {
     /** The ID of the comment (min 1) */
-    id: string;
+    id: number;
     /** The content of the announcement comment (min length 1; max length 10000) */
     content: string;
     /** The ISO 8601 timestamp that the announcement comment was created at */
