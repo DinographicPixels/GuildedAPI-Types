@@ -1,6 +1,6 @@
 import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventSeries } from "./Calendars";
 import { APIGuildChannel } from "./Channels";
-import { APIAnnouncement, APIChatMessage } from "./Chat";
+import { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat";
 import { APIDoc, APIDocComment } from "./Docs";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
 import { APIGuild } from "./Guilds";
@@ -71,19 +71,19 @@ export interface GatewayEvent_AnnouncementDeleted {
 export interface GatewayEvent_AnnouncementCommentCreated {
     /** The ID of the server */
     serverId: string;
-    announcementComment: APIAnnouncement;
+    announcementComment: APIAnnouncementComment;
 };
 
 export interface GatewayEvent_AnnouncementCommentUpdated {
     /** The ID of the server */
     serverId: string;
-    announcementComment: APIAnnouncement;
+    announcementComment: APIAnnouncementComment;
 };
 
 export interface GatewayEvent_AnnouncementCommentDeleted {
     /** The ID of the server */
     serverId: string;
-    announcementComment: APIAnnouncement;
+    announcementComment: APIAnnouncementComment;
 };
 
 
