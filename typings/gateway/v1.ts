@@ -20,7 +20,8 @@ export const GatewayEvents = {
         AnnouncementCommentReactionCreated: "AnnouncementCommentReactionCreated",
         AnnouncementCommentReactionDeleted: "AnnouncementCommentReactionDeleted",
         ChannelMessageReactionCreated: "ChannelMessageReactionCreated",
-        ChannelMessageReactionDeleted: "ChannelMessageReactionDeleted",
+        ChannelMessageReactionManyDeleted: "ChannelMessageReactionManyDeleted",
+        
         // Channel 
         ServerChannelCreated: "ServerChannelCreated",
         ServerChannelUpdated: "ServerChannelUpdated",
@@ -148,8 +149,8 @@ export const USER_SERVERS = (userID: string) => `/users/${userID}/servers`;
 
 export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/messages`;
 export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
-export const CHANNEL_MESSAGE_CONTENT_EMOTES = (channelID: string, messageID: string) => `/channels/${channelID}/content/${messageID}/emotes`;
-export const CHANNEL_MESSAGE_CONTENT_EMOTE = (channelID: string, messageID: string, emoteID: number) => `/channels/${channelID}/content/${messageID}/emotes/${emoteID}`;
+export const CHANNEL_MESSAGE_EMOTES = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}/emotes`;
+export const CHANNEL_MESSAGE_EMOTE = (channelID: string, messageID: string, emoteID: number) => `/channels/${channelID}/messages/${messageID}/emotes/${emoteID}`;
 export const CHANNEL_ANNOUNCEMENTS = (channelID: string) => `/channels/${channelID}/announcements`;
 export const CHANNEL_ANNOUNCEMENT = (channelID: string, announcementID: string) => `/channels/${channelID}/announcements/${announcementID}`;
 export const CHANNEL_ANNOUNCEMENT_EMOTES = (channelID: string, announcementID: string) => `/channels/${channelID}/announcements/${announcementID}/emotes`;

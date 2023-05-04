@@ -2,6 +2,7 @@ import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICal
 import { APIGuildChannel } from "./Channels";
 import { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat";
 import { APIDoc, APIDocComment } from "./Docs";
+import { APIEmote } from "./Emotes";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
 import { APIGuild } from "./Guilds";
 import { APIListItem } from "./ListItems";
@@ -442,7 +443,7 @@ export interface GatewayEvent_ListItemUncompleted {
     listItem: APIListItem
 }
 
-export interface GatewayEvent_ChannelMessageReactionAdded {
+export interface GatewayEvent_ChannelMessageReactionCreated {
     /** The ID of the server */
     serverId?: string
     reaction: APIChatMessageReaction; 
@@ -452,6 +453,21 @@ export interface GatewayEvent_ChannelMessageReactionDeleted {
     /** The ID of the server */
     serverId?: string
     reaction: APIChatMessageReaction;
+}
+
+export interface GatewayEvent_ChannelMessageReactionManyDeleted {
+    /** The ID of the server */
+    serverId: string;
+    /** The ID of the channel */
+    channelId: string;
+    /** The ID of the message */
+    messageId: string;
+    /** The ID of the user who deleted this reaction */
+    deletedBy: string;
+    /** The count of reactions that were removed */
+    count: number;
+    /** If present, only reactions of this emote were bulk removed from the message */
+    emote?: APIEmote;
 }
 
 export interface GatewayEvent_AnnouncementReactionCreated {
