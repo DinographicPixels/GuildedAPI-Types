@@ -1,6 +1,6 @@
 {
   "name": "guildedapi-types.ts",
-  "version": "0.3.25",
+  "version": "0.3.26",
   "description": "Up to date Guilded API Typings. Contribution is welcome.",
   "main": "index.js",
   "scripts": {

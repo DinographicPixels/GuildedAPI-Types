@@ -9,7 +9,7 @@ export * from './Guilds';
 export * from './ListItems';
 export * from './Members';
 export * from './Memberships';
-// export * from './Reactions';
+export * from './Reactions';
 export * from './Socials';
 export * from './Webhooks';
 export * from './Misc';
