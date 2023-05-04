@@ -20,6 +20,7 @@ export const GatewayEvents = {
         AnnouncementCommentReactionCreated: "AnnouncementCommentReactionCreated",
         AnnouncementCommentReactionDeleted: "AnnouncementCommentReactionDeleted",
         ChannelMessageReactionCreated: "ChannelMessageReactionCreated",
+        ChannelMessageReactionDeleted: "ChannelMessageReactionDeleted",
         ChannelMessageReactionManyDeleted: "ChannelMessageReactionManyDeleted",
         
         // Channel 
