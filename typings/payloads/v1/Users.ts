@@ -10,3 +10,10 @@ export interface APISocialLink {
     /** The ISO 8601 timestamp that the social link was created at */
     createdAt: string;
 }
+
+export interface APIUserStatus {
+    /** The content of the user status. The supported markdown for this content only includes reactions and plaintext for now */
+    content?: string;
+    /** Emote ID */
+    emoteId: number;
+}

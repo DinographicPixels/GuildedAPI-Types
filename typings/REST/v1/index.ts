@@ -10,6 +10,7 @@ export * from './ListItems';
 export * from './Members';
 export * from './Memberships';
 export * from './Reactions';
-export * from './Socials';
+export * from './Users';
 export * from './Webhooks';
+export * from "./Users";
 export * from './Misc';

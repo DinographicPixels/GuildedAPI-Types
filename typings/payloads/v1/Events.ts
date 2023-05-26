@@ -4,11 +4,11 @@ import { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat"
 import { APIDoc, APIDocComment } from "./Docs";
 import { APIEmote } from "./Emotes";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
-import { APIGuild } from "./Guilds";
+import { APIGuild, APIGuildGroup } from "./Guilds";
 import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
 import { APIAnnouncementCommentReaction, APIAnnouncementReaction, APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
-import { APISocialLink } from "./Socials";
+import { APISocialLink, APIUserStatus } from "./Users";
 import { APIWebhook } from "./Webhooks";
 
 export interface GatewayEvent_BotServerMembershipCreated {
@@ -492,4 +492,36 @@ export interface GatewayEvent_AnnouncementCommentReactionDeleted {
     /** The ID of the server */
     serverId?: string
     reaction: APIAnnouncementCommentReaction; 
+}
+
+export interface GatewayEvent_GroupCreated {
+    /** The ID of the server */
+    serverId: string;
+    group: APIGuildGroup;
+}
+
+export interface GatewayEvent_GroupUpdated {
+    /** The ID of the server */
+    serverId: string;
+    group: APIGuildGroup;
+}
+
+export interface GatewayEvent_GroupDeleted {
+    /** The ID of the server */
+    serverId: string;
+    group: APIGuildGroup;
+}
+
+export interface GatewayEvent_UserStatusCreated {
+    /** An ISO 8601 timestamp that will be used to indicate when an expiration occurs. Expiration usually will not occur exactly at this time. Bot logic should not expect a guarantee of timing as a result, but can expect that it'll happen very shortly afterwards */
+    expiresAt?: string;
+    /** The ID of the user */
+    userId: string;
+    userStatus: APIUserStatus;
+}
+
+export interface GatewayEvent_UserStatusDeleted {
+    /** The ID of the user */
+    userId: string;
+    userStatus: APIUserStatus;
 }

@@ -5,6 +5,13 @@ export const GatewayEvents = {
         // Misc
         BotServerMembershipCreated: "BotServerMembershipCreated",
         BotServerMembershipDeleted: "BotServerMembershipDeleted",
+        // Guild groups
+        GroupCreated: "GroupCreated",
+        GroupUpdated: "GroupUpdated",
+        GroupDeleted: "GroupDeleted",
+        // Users
+        UserStatusCreated: "UserStatusCreated",
+        UserStatusDeleted: "UserStatusDeleted",
         // Message
         ChatMessageCreated: "ChatMessageCreated",
         ChatMessageUpdated: "ChatMessageUpdated",
@@ -140,6 +147,91 @@ export enum GatewayOPCodes {
     Success = 9
 };
 
+export enum Permissions {
+    CanUpdateServer = "CanUpdateServer",
+    CanManageRoles = "CanManageRoles",
+    CanInviteMembers = "CanInviteMembers",
+    CanKickMembers = "CanKickMember",
+    CanManageGroups = "CanManageGroups",
+    CanManageChannels = "CanManageChannels",
+    CanManageWebhooks = "CanManageWebhooks",
+    CanMentionEveryone = "CanMentionEveryone",
+    CanModerateChannels = "CanModerateChannels",
+    CanBypassSlowMode = "CanBypassSlowMode",
+    CanReadApplications = "CanReadApplications",
+    CanApproveApplications = "CanApproveApplications",
+    CanEditApplicationForm = "CanEditApplicationForm",
+    CanIndicateLfmInterest = "CanIndicateLfmInterest",
+    CanModifyLfmStatus = "CanModifyLfmStatus",
+    CanReadAnnouncements = "CanReadAnnouncements",
+    CanCreateAnnouncements = "CanCreateAnnouncements",
+    CanManageAnnouncements = "CanManageAnnouncements",
+    CanReadChats = "CanReadChats",
+    CanCreateChats = "CanCreateChats",
+    CanUploadChatMedia = "CanUploadChatMedia",
+    CanCreateThreads = "CanCreateThreads",
+    CanCreateThreadMessages = "CanCreateThreadMessages",
+    CanCreatePrivateMessages = "CanCreatePrivateMessages",
+    CanManageChats = "CanManageChats",
+    CanManageThreads = "CanManageThreads",
+    CanReadEvents = "CanReadEvents",
+    CanEditEvents = "CanEditEvents",
+    CanDeleteEvents = "CanDeleteEvents",
+    CanEditEventRsvps = "CanEditEventRsvps",
+    CanReadForums = "CanReadForums",
+    CanCreateTopics = "CanCreateTopics",
+    CanCreateTopicReplies = "CanCreateTopicReplies",
+    CanDeleteTopics = "CanDeleteTopics",
+    CanStickyTopics = "CanStickyTopics",
+    CanLockTopics = "CanLockTopics",
+    CanReadDocs = "CanReadDocs",
+    CanCreateDocs = "CanCreateDocs",
+    CanEditDocs = "CanEditDocs",
+    CanDeleteDocs = "CanDeleteDocs",
+    CanReadMedia = "CanReadMedia",
+    CanAddMedia = "CanAddMedia",
+    CanEditMedia = "CanEditMedia",
+    CanDeleteMedia = "CanDeleteMedia",
+    CanListenVoice = "CanListenVoice",
+    CanAddVoice = "CanAddVoice",
+    CanManageVoiceGroups = "CanManageVoiceGroups",
+    CanAssignVoiceGroup = "CanAssignVoiceGroup",
+    CanBroadcastVoice = "CanBroadcastVoice",
+    CanDirectVoice = "CanDirectVoice",
+    CanPrioritizeVoice = "CanPrioritizeVoice",
+    CanUseVoiceActivity = "CanUseVoiceActivity",
+    CanMuteMembers = "CanMuteMembers",
+    CanDeafenMembers = "CanDeafenMembers",
+    CanSendVoiceMessages = "CanSendVoiceMessages",
+    CanCreateScrims = "CanCreateScrims",
+    CanManageTournaments = "CanManageTournaments",
+    CanRegisterForTournaments = "CanRegisterForTournaments",
+    CanManageEmotes = "CanManageEmotes",
+    CanChangeNickname = "CanChangeNickname",
+    CanManageNicknames = "CanManageNicknames",
+    CanViewFormResponses = "CanViewFormResponses",
+    CanViewPollResponses = "CanViewPollResponses",
+    CanReadListItems = "CanReadListItems",
+    CanCreateListItems = "CanCreateListItems",
+    CanUpdateListItems = "CanUpdateListItems",
+    CanDeleteListItems = "CanDeleteListItems",
+    CanCompleteListItems = "CanCompleteListItems",
+    CanReorderListItems = "CanReorderListItems",
+    CanViewBracket = "CanViewBracket",
+    CanReportScores = "CanReportScores",
+    CanReadSchedules = "CanReadSchedules",
+    CanCreateSchedule = "CanCreateSchedule",
+    CanDeleteSchedule = "CanDeleteSchedule",
+    CanManageBots = "CanManageBots",
+    CanManageServerXp = "CanManageServerXp",
+    CanReadStreams = "CanReadStreams",
+    CanJoinStreamVoice = "CanJoinStreamVoice",
+    CanCreateStreams = "CanCreateStreams",
+    CanSendStreamMessages = "CanSendStreamMessages",
+    CanAddStreamVoice = "CanAddStreamVoice",
+    CanUseVoiceActivityInStream = "CanUseVoiceActivityInStream"
+}
+
 // Endpoints (credits to TouchGuild)
 export const CHANNELS = () => `/channels`;
 export const CHANNEL = (channelID: string) => `/channels/${channelID}`;
@@ -147,6 +239,7 @@ export const CHANNEL = (channelID: string) => `/channels/${channelID}`;
 export const GUILD = (guildID: string) => `/servers/${guildID}`;
 export const USER = (userID: string) => `/users/${userID}`;
 export const USER_SERVERS = (userID: string) => `/users/${userID}/servers`;
+export const USER_STATUS = (userID: string) => `/users/${userID}/status`;
 
 export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/messages`;
 export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
@@ -168,13 +261,17 @@ export const GUILD_MEMBER_XP = (guildID: string, memberID: string) => `/servers/
 export const GUILD_MEMBERS = (guildID: string) => `/servers/${guildID}/members`;
 export const GUILD_MEMBER_SOCIALS = (guildID: string, memberID: string, type: string) => `/servers/${guildID}/members/${memberID}/social-links/${type}`;
 
+export const GUILD_GROUPS = (guildID: string) => `/servers/${guildID}/groups`;
+export const GUILD_GROUP = (guildID: string, groupID: string) => `/servers/${guildID}/groups/${groupID}`;
 export const GUILD_GROUP_MEMBER = (groupID: string, memberID: string) => `/groups/${groupID}/members/${memberID}`;
 export const GUILD_GROUP_MEMBERS = (groupID: string) => `/groups/${groupID}/members/`;
-export const GUILD_GROUP = (groupID: string) => `/groups/${groupID}`;
+export const GUILD_GROUP_ALTERNATIVE = (groupID: string) => `/groups/${groupID}`;
 
 export const GUILD_BAN = (guildID: string, memberID: string) => `/servers/${guildID}/bans/${memberID}`;
 export const GUILD_BANS = (guildID: string) => `/servers/${guildID}/bans`;
 
+export const GUILD_ROLES = (guildID: string) => `/servers/${guildID}/roles`;
+export const GUILD_ROLE = (guildID: string, roleID: number) => `/servers/${guildID}/roles/${roleID}`;
 export const GUILD_MEMBER_ROLE = (guildID: string, memberID: string, roleID: number) => `/servers/${guildID}/members/${memberID}/roles/${roleID}`;
 export const GUILD_MEMBER_ROLE_XP = (guildID: string, roleID: number) => `/servers/${guildID}/roles/${roleID}/xp`;
 export const GUILD_MEMBER_ROLES = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/roles`;
