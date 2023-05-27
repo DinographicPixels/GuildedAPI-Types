@@ -67,7 +67,7 @@ export interface APIGuildRole {
     /** The ID of the server */
     serverId: string;
     /** The ISO 8601 timestamp that the role was created at */
-    cratedAt: string;
+    createdAt: string;
     /** The ISO 8601 timestamp that the role was updated at, if relevant */
     updatedAt?: string;
     /** The role's name */
