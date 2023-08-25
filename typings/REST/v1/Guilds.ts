@@ -1,4 +1,4 @@
-import { APIGuild, APIGuildGroup, APIGuildRole } from "../../payloads/v1/Guilds"
+import { APIGuild, APIGuildGroup, APIGuildRole, APIGuildSubscription } from "../../payloads/v1/Guilds"
 import { APIGuildMemberBan } from "../../payloads/v1/Members"
 
 export interface GETGuildResponse {
@@ -66,4 +66,50 @@ export interface GETGuildRoleResponse {
 
 export interface GETGuildRolesResponse {
     roles: Array<APIGuildRole>;
+}
+
+export interface POSTGuildRoleBody {
+    /** The role's name */
+    name: string;
+    /** If set, the role will be displayed separately in the channel member list (default false) */
+    isDisplayedSeparately?: boolean;
+    /** If set, this roll will be self assigned (default false) */
+    isSelfAssignable?: boolean;
+    /** If set, this role can be mentioned (default false) */
+    isMentionable?: boolean;
+    /** Permissions must be a collection of valid permissions as defined in the Enums/Permissions section of Guilded API documentation website */
+    permissions: Array<string>;
+    /** An array of integer values corresponding to the decimal RGB representation for a color. The first color is solid, and a second color indicates a gradient (min items 0; max items 2) */
+    colors: Array<number>;
+}
+
+export interface POSTGuildRoleResponse {
+    role: APIGuildRole;
+}
+
+export interface PATCHGuildRoleBody {
+    /** The role's name */
+    name?: string;
+    /** If set, the role will be displayed separately in the channel member list (default false) */
+    isDisplayedSeparately?: boolean;
+    /** If set, this roll will be self assigned (default false) */
+    isSelfAssignable?: boolean;
+    /** If set, this role can be mentioned (default false) */
+    isMentionable?: boolean;
+    /** Permissions must be a collection of valid permissions as defined in the Enums/Permissions section of Guilded API documentation website */
+    permissions: Array<string>;
+    /** An array of integer values corresponding to the decimal RGB representation for a color. The first color is solid, and a second color indicates a gradient (min items 0; max items 2) */
+    colors: Array<number>;    
+}
+
+export interface PATCHGuildRoleResponse {
+    role: APIGuildRole;
+}
+
+export interface GETGuildSubscriptionResponse {
+    serverSubscriptionTier: APIGuildSubscription;
+}
+
+export interface GETGuildSubscriptionsResponse {
+    serverSubscriptionTiers: Array<APIGuildSubscription>;
 }
