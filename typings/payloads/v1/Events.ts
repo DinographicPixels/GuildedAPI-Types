@@ -4,7 +4,7 @@ import { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat"
 import { APIDoc, APIDocComment } from "./Docs";
 import { APIEmote } from "./Emotes";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
-import { APIGuild, APIGuildGroup } from "./Guilds";
+import { APIGuild, APIGuildGroup, APIGuildRole } from "./Guilds";
 import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
 import { APIAnnouncementCommentReaction, APIAnnouncementReaction, APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
@@ -524,4 +524,22 @@ export interface GatewayEvent_UserStatusDeleted {
     /** The ID of the user */
     userId: string;
     userStatus: APIUserStatus;
+}
+
+export interface GatewayEvent_RoleCreated {
+    /** The ID of the server */
+    serverId: string;
+    role: APIGuildRole;
+}
+
+export interface GatewayEvent_RoleUpdated {
+    /** The ID of the server */
+    serverId: string;
+    role: APIGuildRole;
+}
+
+export interface GatewayEvent_RoleDeleted {
+    /** The ID of the server */
+    serverId: string;
+    role: APIGuildRole;
 }
