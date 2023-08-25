@@ -28,5 +28,7 @@ export interface APIGuildChannel {
     /** The ID of the user who archived this channel */
     archivedBy?: string,
     /** The ISO 8601 timestamp that the channel was archived at, if relevant */
-    archivedAt?: string
+    archivedAt?: string,
+    /** The visibility of the channel. Only relevant for server channels */
+    visibility?: string
 }
