@@ -279,6 +279,7 @@ export const GUILD_BANS = (guildID: string) => `/servers/${guildID}/bans`;
 
 export const GUILD_ROLES = (guildID: string) => `/servers/${guildID}/roles`;
 export const GUILD_ROLE = (guildID: string, roleID: number) => `/servers/${guildID}/roles/${roleID}`;
+export const GUILD_ROLE_UPDATE_PERMISSION = (guildID: string, roleID: number) => `/servers/${guildID}/roles/${roleID}/permissions`;
 export const GUILD_MEMBER_ROLE = (guildID: string, memberID: string, roleID: number) => `/servers/${guildID}/members/${memberID}/roles/${roleID}`;
 export const GUILD_MEMBER_ROLE_XP = (guildID: string, roleID: number) => `/servers/${guildID}/roles/${roleID}/xp`;
 export const GUILD_MEMBER_ROLES = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/roles`;
