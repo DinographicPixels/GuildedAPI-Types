@@ -59,6 +59,9 @@ export const GatewayEvents = {
         ServerMemberSocialLinkCreated: "ServerMemberSocialLinkCreated",
         ServerMemberSocialLinkUpdated: "ServerMemberSocialLinkUpdated",
         ServerMemberSocialLinkDeleted: "ServerMemberSocialLinkDeleted",
+        RoleCreated: "RoleCreated",
+        RoleUpdated: "RoleUpdated",
+        RoleDeleted: "RoleDeleted",
         // Webhook
         ServerWebhookCreated: "ServerWebhookCreated",
         ServerWebhookUpdated: "ServerWebhookUpdated",
