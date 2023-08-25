@@ -15,6 +15,8 @@ export interface POSTChannelBody {
     groupId?: string,
     /** The category the channel should go in. If not provided, channel will be a top-level channel */
     categoryId: number
+    /** Channel visibility */
+    visibility?: string | null
 }
 
 export interface POSTChannelResponse {
@@ -34,6 +36,8 @@ export interface PATCHChannelBody {
     topic?: string,
     /** Whether the channel can be accessed from users who are not member of the server. Not applicable to threads */
     isPublic?: boolean
+    /** Channel visibility */
+    visibility?: string | null
 }
 
 export interface PATCHChannelResponse {

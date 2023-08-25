@@ -238,6 +238,7 @@ export enum Permissions {
 // Endpoints (credits to TouchGuild)
 export const CHANNELS = () => `/channels`;
 export const CHANNEL = (channelID: string) => `/channels/${channelID}`;
+export const CHANNEL_ARCHIVE = (channelID: string) => `/channels/${channelID}/archive`;
 
 export const GUILD = (guildID: string) => `/servers/${guildID}`;
 export const USER = (userID: string) => `/users/${userID}`;
@@ -246,6 +247,7 @@ export const USER_STATUS = (userID: string) => `/users/${userID}/status`;
 
 export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/messages`;
 export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
+export const CHANNEL_MESSAGE_PIN = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}/pin`;
 export const CHANNEL_MESSAGE_EMOTES = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}/emotes`;
 export const CHANNEL_MESSAGE_EMOTE = (channelID: string, messageID: string, emoteID: number) => `/channels/${channelID}/messages/${messageID}/emotes/${emoteID}`;
 export const CHANNEL_ANNOUNCEMENTS = (channelID: string) => `/channels/${channelID}/announcements`;
