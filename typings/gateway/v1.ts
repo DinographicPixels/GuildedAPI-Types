@@ -260,6 +260,7 @@ export const CHANNEL_ANNOUNCEMENT_COMMENT_EMOTE = (channelID: string, announceme
 export const MEMBER_NICKNAME = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/nickname`;
 
 export const GUILD_MEMBER = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}`;
+export const GUILD_MEMBER_PERMISSION = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/permissions`;
 export const GUILD_MEMBER_XP = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/xp`;
 export const GUILD_MEMBERS = (guildID: string) => `/servers/${guildID}/members`;
 export const GUILD_MEMBER_SOCIALS = (guildID: string, memberID: string, type: string) => `/servers/${guildID}/members/${memberID}/social-links/${type}`;
@@ -269,6 +270,9 @@ export const GUILD_GROUP = (guildID: string, groupID: string) => `/servers/${gui
 export const GUILD_GROUP_MEMBER = (groupID: string, memberID: string) => `/groups/${groupID}/members/${memberID}`;
 export const GUILD_GROUP_MEMBERS = (groupID: string) => `/groups/${groupID}/members/`;
 export const GUILD_GROUP_ALTERNATIVE = (groupID: string) => `/groups/${groupID}`;
+
+export const GUILD_SUBSCRIPTIONS = (guildID: string) => `/servers/${guildID}/subscriptions/tiers`;
+export const GUILD_SUBSCRIPTION = (guildID: string, subscriptionID: string) => `/servers/${guildID}/subscriptions/tiers/${subscriptionID}`;
 
 export const GUILD_BAN = (guildID: string, memberID: string) => `/servers/${guildID}/bans/${memberID}`;
 export const GUILD_BANS = (guildID: string) => `/servers/${guildID}/bans`;

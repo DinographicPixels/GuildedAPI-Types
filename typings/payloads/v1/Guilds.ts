@@ -89,3 +89,12 @@ export interface APIGuildRole {
     /** The default role users are given when joining the server. Base roles are tied directly to the server and cannot be created or deleted (default false) */
     isBase?: boolean;
 }
+
+export interface APIGuildSubscription {
+    type: string;
+    serverId: string;
+    description: string | null;
+    roleId: number;
+    cost: number;
+    createdAt: string;
+}

@@ -1,4 +1,4 @@
-import { APIGuild, APIGuildGroup, APIGuildRole } from "../../payloads/v1/Guilds"
+import { APIGuild, APIGuildGroup, APIGuildRole, APIGuildSubscription } from "../../payloads/v1/Guilds"
 import { APIGuildMemberBan } from "../../payloads/v1/Members"
 
 export interface GETGuildResponse {
@@ -104,4 +104,12 @@ export interface PATCHGuildRoleBody {
 
 export interface PATCHGuildRoleResponse {
     role: APIGuildRole;
+}
+
+export interface GETGuildSubscriptionResponse {
+    serverSubscriptionTier: APIGuildSubscription;
+}
+
+export interface GETGuildSubscriptionsResponse {
+    serverSubscriptionTiers: Array<APIGuildSubscription>;
 }

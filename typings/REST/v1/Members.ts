@@ -1,3 +1,4 @@
+import { Permissions } from "guildedapi-types.ts/v1";
 import { APIGuildMember, APIGuildMemberSummary } from "../../payloads/v1/Members";
 
 export interface PUTMemberNicknameBody {
@@ -16,4 +17,8 @@ export interface GETGuildMemberResponse {
 
 export interface GETGuildMembersResponse {
     members: Array<APIGuildMemberSummary>;
+}
+
+export interface GETGuildMemberPermissionResponse {
+    permissions: Array<Permissions>;
 }
