@@ -1,4 +1,4 @@
-import { Permissions } from "guildedapi-types.ts/v1";
+import { Permissions } from "../../gateway/v1";
 import { APIGuildMember, APIGuildMemberSummary } from "../../payloads/v1/Members";
 
 export interface PUTMemberNicknameBody {
