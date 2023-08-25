@@ -102,6 +102,10 @@ export interface PATCHGuildRoleBody {
     colors: Array<number>;    
 }
 
+export interface PATCHGuildRoleUpdateResponse {
+    role: APIGuildRole;
+}
+
 export interface PATCHGuildRoleResponse {
     role: APIGuildRole;
 }

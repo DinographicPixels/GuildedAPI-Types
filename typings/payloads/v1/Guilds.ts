@@ -88,6 +88,8 @@ export interface APIGuildRole {
     position: number;
     /** The default role users are given when joining the server. Base roles are tied directly to the server and cannot be created or deleted (default false) */
     isBase?: boolean;
+    /** The bot user ID this role has been defined for. Roles with this populated can only be deleted by kicking the bot */
+    botUserId?: string;
 }
 
 export interface APIGuildSubscription {
