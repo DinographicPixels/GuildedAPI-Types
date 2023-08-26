@@ -1,4 +1,4 @@
-export type APIChannelCategories = 'announcement'|'chat'|'calendar'|'forums'|'media'|'docs'|'voice'|'list'|'scheduling'|'stream';
+export type APIChannelCategories = 'announcements'|'chat'|'calendar'|'forums'|'media'|'docs'|'voice'|'list'|'scheduling'|'stream';
 
 export interface APIGuildChannel {
     /** The ID of the channel */
