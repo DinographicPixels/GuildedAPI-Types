@@ -100,3 +100,21 @@ export interface APIGuildSubscription {
     cost: number;
     createdAt: string;
 }
+
+export interface APIGuildSubscription {
+    type: string;
+    serverId: string;
+    description: string | null;
+    roleId: number;
+    cost: number;
+    createdAt: string;
+}
+
+export interface APIGuildCategory {
+    id: number;
+    serverId: string;
+    groupId: string;
+    createdAt: Date;
+    updatedAt: Date | null;
+    name: string;
+}

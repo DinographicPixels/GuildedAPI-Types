@@ -326,3 +326,6 @@ export const CHANNEL_EVENT_EVENT_SERIES_ENTITY = (channelID: string, seriesID: s
 
 export const GUILD_WEBHOOKS = (guildID: string)=> `/servers/${guildID}/webhooks`;
 export const GUILD_WEBHOOK = (guildID: string, webhookID: string)=> `/servers/${guildID}/webhooks/${webhookID}`;
+
+export const GUILD_CATEGORY_CREATE = (guildID: string) => `/servers/${guildID}/categories`;
+export const GUILD_CATEGORY = (guildID: string, categoryID: number) => `/servers/${guildID}/categories/${categoryID}`;

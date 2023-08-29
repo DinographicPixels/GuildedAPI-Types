@@ -1,4 +1,4 @@
-import { APIGuild, APIGuildGroup, APIGuildRole, APIGuildSubscription } from "../../payloads/v1/Guilds"
+import { APIGuild, APIGuildGroup, APIGuildRole, APIGuildSubscription, APIGuildCategory } from "../../payloads/v1/Guilds"
 import { APIGuildMemberBan } from "../../payloads/v1/Members"
 
 export interface GETGuildResponse {
@@ -116,4 +116,32 @@ export interface GETGuildSubscriptionResponse {
 
 export interface GETGuildSubscriptionsResponse {
     serverSubscriptionTiers: Array<APIGuildSubscription>;
+}
+
+export interface POSTCreateCategoryBody {
+    /** Name of the category (min length 1; max length 100) */
+    name: string;
+    /** The ID of the group. If not provided, the category will be created in the "Server home" group from serverId. */
+    groupId?: string;
+}
+
+export interface POSTCreateCategoryResponse {
+    category: APIGuildCategory;
+}
+
+export interface GETReadCategoryResponse {
+    category: APIGuildCategory;
+}
+
+export interface PATCHUpdateCategoryBody {
+    /** Name of the category (min length 1; max length 100) */
+    name: string;
+}
+
+export interface PATCHUpdateCategoryResponse {
+    category: APIGuildCategory;
+}
+
+export interface DELETEDeleteCategoryResponse {
+    category: APIGuildCategory;
 }
