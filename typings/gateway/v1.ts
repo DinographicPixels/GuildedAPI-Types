@@ -264,6 +264,7 @@ export const MEMBER_NICKNAME = (guildID: string, memberID: string) => `/servers/
 export const GUILD_MEMBER = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}`;
 export const GUILD_MEMBER_PERMISSION = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/permissions`;
 export const GUILD_MEMBER_XP = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/xp`;
+export const GUILD_MEMBER_BULK_XP = (guildID: string) => `/servers/${guildID}/xp`;
 export const GUILD_MEMBERS = (guildID: string) => `/servers/${guildID}/members`;
 export const GUILD_MEMBER_SOCIALS = (guildID: string, memberID: string, type: string) => `/servers/${guildID}/members/${memberID}/social-links/${type}`;
 

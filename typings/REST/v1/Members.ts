@@ -22,3 +22,27 @@ export interface GETGuildMembersResponse {
 export interface GETGuildMemberPermissionResponse {
     permissions: Array<Permissions>;
 }
+
+export interface POSTBulkAwardXPBody {
+    /** The amount of XP to award to each user */
+    amount: number,
+    /** The IDs of the users to award XP to */
+    userIds: Array<string>;
+}
+
+export interface POSTBulkAwardXPResponse {
+    /** The total amount of XP of each user */
+    totalsByUserId: Record<string, number>;
+}
+
+export interface PUTBulkSetXPBody {
+    /** The amount of XP to set to each user */
+    amount: number,
+    /** The IDs of the users to set XP to */
+    userIds: Array<string>;
+}
+
+export interface PUTBulkSetXPResponse {
+    /** The total amount of XP of each user */
+    totalsByUserId: Record<string, number>;
+}
