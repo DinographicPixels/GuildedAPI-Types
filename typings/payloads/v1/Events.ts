@@ -1,10 +1,10 @@
 import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventSeries } from "./Calendars";
-import { APIGuildChannel } from "./Channels";
+import { APIChannelCategoryRolePermission, APIChannelCategoryUserPermission, APIChannelRolePermission, APIChannelUserPermission, APIGuildChannel } from "./Channels";
 import { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat";
 import { APIDoc, APIDocComment } from "./Docs";
 import { APIEmote } from "./Emotes";
 import { APIForumTopic, APIForumTopicComment } from "./Forums";
-import { APIGuild, APIGuildGroup, APIGuildRole } from "./Guilds";
+import { APIGuild, APIGuildCategory, APIGuildGroup, APIGuildRole } from "./Guilds";
 import { APIListItem } from "./ListItems";
 import { APIGuildMember, APIGuildMemberBan } from "./Members";
 import { APIAnnouncementCommentReaction, APIAnnouncementReaction, APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
@@ -542,4 +542,118 @@ export interface GatewayEvent_RoleDeleted {
     /** The ID of the server */
     serverId: string;
     role: APIGuildRole;
+}
+
+export interface GatewayEvent_ChannelArchived {
+    /** The ID of the server */
+    serverId: string;
+    channel: APIGuildChannel;
+}
+
+export interface GatewayEvent_ChannelRestored {
+    /** The ID of the server */
+    serverId: string;
+    channel: APIGuildChannel;
+}
+
+export interface GatewayEvent_CategoryCreated {
+    /** The ID of the server */
+    serverId: string;
+    category: APIGuildCategory;
+}
+
+export interface GatewayEvent_CategoryUpdated {
+    /** The ID of the server */
+    serverId: string;
+    category: APIGuildCategory;
+}
+
+export interface GatewayEvent_CategoryDeleted {
+    /** The ID of the server */
+    serverId: string;
+    category: APIGuildCategory;
+}
+
+export interface GatewayEvent_ChannelMessagePinned {
+    /** The ID of the server */
+    serverId: string;
+    message: APIChatMessage;
+}
+
+export interface GatewayEvent_ChannelMessageUnpinned {
+    /** The ID of the server */
+    serverId: string;
+    message: APIChatMessage;
+}
+
+export interface GatewayEvent_ChannelRolePermissionCreated {
+    /** The ID of the server */
+    serverId: string;
+    channelRolePermission: APIChannelRolePermission;
+}
+
+export interface GatewayEvent_ChannelRolePermissionUpdated {
+    /** The ID of the server */
+    serverId: string;
+    channelRolePermission: APIChannelRolePermission;
+}
+
+export interface GatewayEvent_ChannelRolePermissionDeleted {
+    /** The ID of the server */
+    serverId: string;
+    channelRolePermission: APIChannelRolePermission;
+}
+
+export interface GatewayEvent_ChannelUserPermissionCreated {
+    /** The ID of the server */
+    serverId: string;
+    channelUserPermission: APIChannelUserPermission;
+}
+
+export interface GatewayEvent_ChannelUserPermissionUpdated {
+    /** The ID of the server */
+    serverId: string;
+    channelUserPermission: APIChannelUserPermission;
+}
+
+export interface GatewayEvent_ChannelUserPermissionDeleted {
+    /** The ID of the server */
+    serverId: string;
+    channelUserPermission: APIChannelUserPermission;
+}
+
+export interface GatewayEvent_ChannelCategoryUserPermissionCreated {
+    /** The ID of the server */
+    serverId: string;
+    channelCategoryUserPermission: APIChannelCategoryUserPermission;
+}
+
+export interface GatewayEvent_ChannelCategoryUserPermissionUpdated {
+    /** The ID of the server */
+    serverId: string;
+    channelCategoryUserPermission: APIChannelCategoryUserPermission;
+}
+
+export interface GatewayEvent_ChannelCategoryUserPermissionDeleted {
+    /** The ID of the server */
+    serverId: string;
+    channelCategoryUserPermission: APIChannelCategoryUserPermission;
+}
+
+export interface GatewayEvent_ChannelCategoryRolePermissionCreated {
+    /** The ID of the server */
+    serverId: string;
+    channelCategoryRolePermission: APIChannelCategoryRolePermission;
+}
+
+export interface GatewayEvent_ChannelCategoryRolePermissionUpdated {
+    /** The ID of the server */
+    serverId: string;
+    channelCategoryRolePermission: APIChannelCategoryRolePermission;
+}
+
+export interface GatewayEvent_ChannelCategoryRolePermissionDeleted {
+    /** The ID of the server */
+    serverId: string;
+    channelCategoryRolePermission: APIChannelCategoryRolePermission;
 }

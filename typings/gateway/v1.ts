@@ -29,11 +29,26 @@ export const GatewayEvents = {
         ChannelMessageReactionCreated: "ChannelMessageReactionCreated",
         ChannelMessageReactionDeleted: "ChannelMessageReactionDeleted",
         ChannelMessageReactionManyDeleted: "ChannelMessageReactionManyDeleted",
-        
+        ChannelMessagePinned: "ChannelMessagePinned",
+        ChannelMessageUnpinned: "ChannelMessageUnpinned",
         // Channel 
         ServerChannelCreated: "ServerChannelCreated",
         ServerChannelUpdated: "ServerChannelUpdated",
         ServerChannelDeleted: "ServerChannelDeleted",
+        ChannelRolePermissionCreated: "ChannelRolePermissionCreated",
+        ChannelRolePermissionUpdated: "ChannelRolePermissionUpdated",
+        ChannelRolePermissionDeleted: "ChannelRolePermissionDeleted",
+        ChannelUserPermissionCreated: "ChannelUserPermissionCreated",
+        ChannelUserPermissionUpdated: "ChannelUserPermissionUpdated",
+        ChannelUserPermissionDeleted: "ChannelUserPermissionDeleted",
+        ChannelArchived: "ChannelArchived",
+        ChannelRestored: "ChannelRestored",
+        ChannelCategoryUserPermissionCreated: "ChannelCategoryUserPermissionCreated",
+        ChannelCategoryUserPermissionUpdated: "ChannelCategoryUserPermissionUpdated",
+        ChannelCategoryUserPermissionDeleted: "ChannelCategoryUserPermissionDeleted",
+        ChannelCategoryRolePermissionCreated: "ChannelCategoryRolePermissionCreated",
+        ChannelCategoryRolePermissionUpdated: "ChannelCategoryRolePermissionUpdated",
+        ChannelCategoryRolePermissionDeleted: "ChannelCategoryRolePermissionDeleted",
         // Forum Topic
         ForumTopicCreated: "ForumTopicCreated",
         ForumTopicUpdated: "ForumTopicUpdated",
@@ -95,7 +110,11 @@ export const GatewayEvents = {
         ListItemUpdated: "ListItemUpdated",
         ListItemDeleted: "ListItemDeleted",
         ListItemCompleted: "ListItemCompleted",
-        ListItemUncompleted: "ListItemUncompleted"
+        ListItemUncompleted: "ListItemUncompleted",
+        // Category
+        CategoryCreated: "CategoryCreated",
+        CategoryUpdated: "CategoryUpdated",
+        CategoryDeleted: "CategoryDeleted"
 } as const;
 
 export type GATEWAY_EVENTS = typeof GatewayEvents;
@@ -232,7 +251,7 @@ export enum Permissions {
     CanCreateStreams = "CanCreateStreams",
     CanSendStreamMessages = "CanSendStreamMessages",
     CanAddStreamVoice = "CanAddStreamVoice",
-    CanUseVoiceActivityInStream = "CanUseVoiceActivityInStream"
+    CanUseVoiceActivityInStream = "CanUseVoiceActivityInStream",
 }
 
 // Endpoints (credits to TouchGuild)
@@ -258,6 +277,12 @@ export const CHANNEL_ANNOUNCEMENT_COMMENTS = (channelID: string, announcementID:
 export const CHANNEL_ANNOUNCEMENT_COMMENT = (channelID: string, announcementID: string, commentID: number) => `/channels/${channelID}/announcements/${announcementID}/comments/${commentID}`;
 export const CHANNEL_ANNOUNCEMENT_COMMENT_EMOTES = (channelID: string, announcementID: string, commentID: number) => `/channels/${channelID}/announcements/${announcementID}/comments/${commentID}/emotes`;
 export const CHANNEL_ANNOUNCEMENT_COMMENT_EMOTE = (channelID: string, announcementID: string, commentID: number, emoteID: number) => `/channels/${channelID}/announcements/${announcementID}/comments/${commentID}/emotes/${emoteID}`;
+export const CHANNEl_ROLE_PERMISSION = (serverID: string, channelID: string, roleID: number) => `/servers/${serverID}/channels/${channelID}/permissions/roles/${roleID}`;
+export const CHANNEl_ROLE_MANY_PERMISSION = (serverID: string, channelID: string) => `/servers/${serverID}/channels/${channelID}/permissions/roles`;
+export const CHANNEl_USER_PERMISSION = (serverID: string, channelID: string, userID: string) => `/servers/${serverID}/channels/${channelID}/permissions/users/${userID}`;
+export const CHANNEl_USER_MANY_PERMISSION = (serverID: string, channelID: string) => `/servers/${serverID}/channels/${channelID}/permissions/users`;
+export const CHANNEl_CATEGORY_USER_PERMISSION = (serverID: string, categoryID: string, userID: string) => `/servers/${serverID}/categories/${categoryID}/permissions/users/${userID}`;
+export const CHANNEl_CATEGORY_USER_MANY_PERMISSION = (serverID: string, channelID: string) => `/servers/${serverID}/channels/${channelID}/permissions/users/`;
 
 export const MEMBER_NICKNAME = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/nickname`;
 
