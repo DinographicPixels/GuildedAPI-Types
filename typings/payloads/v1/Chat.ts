@@ -11,6 +11,8 @@ export type APIChatMessage = {
     channelId: string,
     /** The content of the message */
     content?: string,
+    /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
+    hiddenLinkPreviewUrls?: Array<string>,
     /** (min items 1; max items 10)  */
     embeds?: Array<APIEmbedOptions>,
     /** Message IDs that were replied to (min items 1; max items 5) */
@@ -101,6 +103,8 @@ export interface APIEmbedField {
 export type APIMessageOptions = {
     /** The content of the message (min length 1; max length 4000) */
     content?: string,
+    /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
+    hiddenLinkPreviewUrls?: Array<string>;
     /** Embeds */
     embeds?: Array<APIEmbedOptions>,
     /** Message IDs to reply to (min items 1; max items 5) */

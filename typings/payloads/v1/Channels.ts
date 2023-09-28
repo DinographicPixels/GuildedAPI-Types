@@ -1,4 +1,5 @@
-export type APIChannelCategories = 'announcement'|'chat'|'calendar'|'forums'|'media'|'docs'|'voice'|'list'|'scheduling'|'stream';
+import { Permissions } from "../../gateway";
+export type APIChannelCategories = 'announcements'|'chat'|'calendar'|'forums'|'media'|'docs'|'voice'|'list'|'scheduling'|'stream';
 
 export interface APIGuildChannel {
     /** The ID of the channel */
@@ -31,4 +32,52 @@ export interface APIGuildChannel {
     archivedAt?: string,
     /** The visibility of the channel. Only relevant for server channels */
     visibility?: string
+}
+
+export interface APIChannelRolePermission {
+    permission: Array<Permissions>,
+    /** The ISO 8601 timestamp that the permission override was created at */
+    createdAt: string,
+    /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
+    updatedAt?: string,
+    /** The ID of the role */
+    roleId: number,
+    /** The ID of the channel */
+    channelId: string,
+}
+
+export interface APIChannelUserPermission {
+    permission: Array<Permissions>,
+    /** The ISO 8601 timestamp that the permission override was created at */
+    createdAt: string,
+    /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
+    updatedAt?: string,
+    /** The ID of the user */
+    userId: number,
+    /** The ID of the channel */
+    channelId: string,
+}
+
+export interface APIChannelCategoryUserPermission {
+    permission: Array<Permissions>,
+    /** The ISO 8601 timestamp that the permission override was created at */
+    createdAt: string,
+    /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
+    updatedAt?: string,
+    /** The ID of the user */
+    userId: number,
+    /** The ID of the channel */
+    categoryId: string,
+}
+
+export interface APIChannelCategoryRolePermission {
+    permission: Array<Permissions>,
+    /** The ISO 8601 timestamp that the permission override was created at */
+    createdAt: string,
+    /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
+    updatedAt?: string,
+    /** The ID of the role */
+    roleId: number,
+    /** The ID of the channel */
+    categoryId: string,
 }
