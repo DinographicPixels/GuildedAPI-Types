@@ -46,15 +46,15 @@ export interface PATCHChannelResponse {
 
 export interface POSTChannelRolePermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface POSTChannelRolePermissionResponse {
-    channelRolePermissions: APIChannelRolePermission
+    channelRolePermission: APIChannelRolePermission
 }
 
 export interface GETChannelRolePermissionResponse {
-    channelRolePermissions: APIChannelRolePermission
+    channelRolePermission: APIChannelRolePermission
 }
 
 export interface GETChannelRoleManyPermissionResponse {
@@ -63,24 +63,24 @@ export interface GETChannelRoleManyPermissionResponse {
 
 export interface PATCHChannelRolePermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface PATCHChannelRolePermissionResponse {
-    channelRolePermissions: APIChannelRolePermission
+    channelRolePermission: APIChannelRolePermission
 }
 
 export interface POSTChannelUserPermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface POSTChannelUserPermissionResponse {
-    channelUserPermissions: APIChannelUserPermission
+    channelUserPermission: APIChannelUserPermission
 }
 
 export interface GETChannelUserPermissionResponse {
-    channelUserPermissions: APIChannelUserPermission
+    channelUserPermission: APIChannelUserPermission
 }
 
 export interface GETChannelUserManyPermissionResponse {
@@ -89,16 +89,16 @@ export interface GETChannelUserManyPermissionResponse {
 
 export interface PATCHChannelUserPermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface PATCHChannelUserPermissionResponse {
-    channelUserPermissions: APIChannelUserPermission
+    channelUserPermission: APIChannelUserPermission
 }
 
 export interface POSTChannelCategoryUserPermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface POSTChannelCategoryUserPermissionResponse {
@@ -110,12 +110,12 @@ export interface GETChannelCategoryUserPermissionResponse {
 }
 
 export interface GETChannelCategoryUserManyPermissionResponse {
-    channelCategoryUserPermission: Array<APIChannelCategoryUserPermission>
+    channelCategoryUserPermissions: Array<APIChannelCategoryUserPermission>
 }
 
 export interface PATCHChannelCategoryUserPermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface PATCHChannelCategoryUserPermissionResponse {
@@ -124,7 +124,7 @@ export interface PATCHChannelCategoryUserPermissionResponse {
 
 export interface POSTChannelCategoryRolePermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface POSTChannelCategoryRolePermissionResponse {
@@ -136,12 +136,12 @@ export interface GETChannelCategoryRolePermissionResponse {
 }
 
 export interface GETChannelCategoryRoleManyPermissionResponse {
-    channelCategoryRolePermission: Array<APIChannelCategoryRolePermission>
+    channelCategoryRolePermissions: Array<APIChannelCategoryRolePermission>
 }
 
 export interface PATCHChannelCategoryRolePermissionBody {
     /** A JSON object of Enums/Permissions with true, false or null values. Permission list can only contain relevant permissions for the channel type */
-    permissions: Array<string>
+    permissions: { [key: string]: boolean }
 }
 
 export interface PATCHChannelCategoryRolePermissionResponse {

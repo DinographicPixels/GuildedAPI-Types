@@ -282,7 +282,9 @@ export const CHANNEl_ROLE_MANY_PERMISSION = (serverID: string, channelID: string
 export const CHANNEl_USER_PERMISSION = (serverID: string, channelID: string, userID: string) => `/servers/${serverID}/channels/${channelID}/permissions/users/${userID}`;
 export const CHANNEl_USER_MANY_PERMISSION = (serverID: string, channelID: string) => `/servers/${serverID}/channels/${channelID}/permissions/users`;
 export const CHANNEl_CATEGORY_USER_PERMISSION = (serverID: string, categoryID: string, userID: string) => `/servers/${serverID}/categories/${categoryID}/permissions/users/${userID}`;
-export const CHANNEl_CATEGORY_USER_MANY_PERMISSION = (serverID: string, channelID: string) => `/servers/${serverID}/channels/${channelID}/permissions/users/`;
+export const CHANNEl_CATEGORY_USER_MANY_PERMISSION = (serverID: string, channelID: string) => `/servers/${serverID}/categories/${channelID}/permissions/users`;
+export const CHANNEL_CATEGORY_ROLE_PERMISSION = (serverID: string, categoryID: number, roleID: number) => `/servers/${serverID}/categories/${categoryID}/permissions/roles/${roleID}`;
+export const CHANNEL_CATEGORY_ROLE_MANY_PERMISSION = (serverID: string, categoryID: number) => `/servers/${serverID}/categories/${categoryID}/permissions/roles`;
 
 export const MEMBER_NICKNAME = (guildID: string, memberID: string) => `/servers/${guildID}/members/${memberID}/nickname`;
 
