@@ -1,4 +1,3 @@
-import { Permissions } from "../../gateway";
 export type APIChannelCategories = 'announcements'|'chat'|'calendar'|'forums'|'media'|'docs'|'voice'|'list'|'scheduling'|'stream';
 
 export interface APIGuildChannel {
@@ -35,11 +34,11 @@ export interface APIGuildChannel {
 }
 
 export interface APIChannelRolePermission {
-    permission: Array<Permissions>,
+    permissions: Record<string, boolean>,
     /** The ISO 8601 timestamp that the permission override was created at */
-    createdAt: string,
+    createdAt: Date,
     /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
-    updatedAt?: string,
+    updatedAt?: Date,
     /** The ID of the role */
     roleId: number,
     /** The ID of the channel */
@@ -47,37 +46,49 @@ export interface APIChannelRolePermission {
 }
 
 export interface APIChannelUserPermission {
-    permission: Array<Permissions>,
+    permissions: Record<string, boolean>
     /** The ISO 8601 timestamp that the permission override was created at */
-    createdAt: string,
+    createdAt: Date,
     /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
-    updatedAt?: string,
+    updatedAt?: Date,
     /** The ID of the user */
-    userId: number,
+    userId: string,
     /** The ID of the channel */
     channelId: string,
 }
 
 export interface APIChannelCategoryUserPermission {
-    permission: Array<Permissions>,
+    permissions: Record<string, boolean>,
     /** The ISO 8601 timestamp that the permission override was created at */
-    createdAt: string,
+    createdAt: Date,
     /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
-    updatedAt?: string,
+    updatedAt?: Date,
     /** The ID of the user */
-    userId: number,
+    userId: string,
     /** The ID of the channel */
-    categoryId: string,
+    categoryId: number,
 }
 
 export interface APIChannelCategoryRolePermission {
-    permission: Array<Permissions>,
+    permissions: Record<string, boolean>
     /** The ISO 8601 timestamp that the permission override was created at */
-    createdAt: string,
+    createdAt: Date,
     /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
-    updatedAt?: string,
+    updatedAt?: Date,
     /** The ID of the role */
     roleId: number,
     /** The ID of the channel */
-    categoryId: string,
+    categoryId: number,
+}
+
+export interface APIChannelCategoryUserPermission {
+    permissions: Record<string, boolean>
+    /** The ISO 8601 timestamp that the permission override was created at */
+    createdAt: Date,
+    /** The ISO 8601 timestamp that the permission override was updated at, if relevant */
+    updatedAt?: Date,
+    /** The ID of the user */
+    userId: string,
+    /** The ID of the channel */
+    categoryId: number,
 }
