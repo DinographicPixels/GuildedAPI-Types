@@ -92,6 +92,11 @@ export interface GatewayEvent_ServerMemberJoined {
     /** The ID of the server */
     serverId: string,
     member: APIGuildMember
+    /** Count of members in this server after this join.
+     * 
+     * Note: at higher member counts (1000+), this value is only updated periodically and should not be used in situations that require absolute accuracy
+    */
+    serverMemberCount: number;
 }
 
 export interface GatewayEvent_ServerMemberRemoved {

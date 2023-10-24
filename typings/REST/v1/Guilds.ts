@@ -79,6 +79,8 @@ export interface POSTGuildRoleBody {
     isMentionable?: boolean;
     /** Permissions must be a collection of valid permissions as defined in the Enums/Permissions section of Guilded API documentation website */
     permissions: Array<string>;
+    /** The priority the role will be in relation to other roles in the server. The higher the value, the more precedence the role has over lower priority roles, and the higher up it will be displayed in the UI. Values can be zero or negative (min `1`) */
+    priority?: number;
     /** An array of integer values corresponding to the decimal RGB representation for a color. The first color is solid, and a second color indicates a gradient (min items 0; max items 2) */
     colors: Array<number>;
 }

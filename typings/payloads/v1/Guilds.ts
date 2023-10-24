@@ -84,8 +84,8 @@ export interface APIGuildRole {
     colors?: Array<number>;
     /** The URL of the role icon */
     icon?: string;
-    /** The position the role will be in relation to the roles in the server */
-    position: number;
+    /** The priority the role will be in relation to other roles in the server. The higher the value, the more precedence the role has over lower priority roles, and the higher up it will be displayed in the UI. Values can be zero or negative */
+    priority: number;
     /** The default role users are given when joining the server. Base roles are tied directly to the server and cannot be created or deleted (default false) */
     isBase?: boolean;
     /** The bot user ID this role has been defined for. Roles with this populated can only be deleted by kicking the bot */
