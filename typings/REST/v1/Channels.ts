@@ -1,4 +1,5 @@
-import { APIChannelCategories, APIChannelCategoryRolePermission, APIChannelCategoryUserPermission, APIChannelRolePermission, APIChannelUserPermission, APIGuildChannel } from "../../payloads/v1/Channels";
+import { APIGuildCategoryRolePermission, APIGuildCategoryUserPermission } from "../../payloads";
+import { APIChannelCategories, APIChannelRolePermission, APIChannelUserPermission, APIGuildChannel } from "../../payloads/v1/Channels";
 
 export interface POSTChannelBody {
     /** The name of the channel (min length 1; max length 100) */
@@ -102,15 +103,15 @@ export interface POSTChannelCategoryUserPermissionBody {
 }
 
 export interface POSTChannelCategoryUserPermissionResponse {
-    channelCategoryUserPermission: APIChannelCategoryUserPermission
+    channelCategoryUserPermission: APIGuildCategoryUserPermission
 }
 
 export interface GETChannelCategoryUserPermissionResponse {
-    channelCategoryUserPermission: APIChannelCategoryUserPermission
+    channelCategoryUserPermission: APIGuildCategoryUserPermission
 }
 
 export interface GETChannelCategoryUserManyPermissionResponse {
-    channelCategoryUserPermissions: Array<APIChannelCategoryUserPermission>
+    channelCategoryUserPermissions: Array<APIGuildCategoryUserPermission>
 }
 
 export interface PATCHChannelCategoryUserPermissionBody {
@@ -119,7 +120,7 @@ export interface PATCHChannelCategoryUserPermissionBody {
 }
 
 export interface PATCHChannelCategoryUserPermissionResponse {
-    channelCategoryUserPermission: APIChannelCategoryUserPermission
+    channelCategoryUserPermission: APIGuildCategoryUserPermission
 }
 
 export interface POSTChannelCategoryRolePermissionBody {
@@ -128,15 +129,15 @@ export interface POSTChannelCategoryRolePermissionBody {
 }
 
 export interface POSTChannelCategoryRolePermissionResponse {
-    channelCategoryRolePermission: APIChannelCategoryRolePermission
+    channelCategoryRolePermission: APIGuildCategoryRolePermission
 }
 
 export interface GETChannelCategoryRolePermissionResponse {
-    channelCategoryRolePermission: APIChannelCategoryRolePermission
+    channelCategoryRolePermission: APIGuildCategoryRolePermission
 }
 
 export interface GETChannelCategoryRoleManyPermissionResponse {
-    channelCategoryRolePermissions: Array<APIChannelCategoryRolePermission>
+    channelCategoryRolePermissions: Array<APIGuildCategoryRolePermission>
 }
 
 export interface PATCHChannelCategoryRolePermissionBody {
@@ -145,5 +146,5 @@ export interface PATCHChannelCategoryRolePermissionBody {
 }
 
 export interface PATCHChannelCategoryRolePermissionResponse {
-    channelCategoryRolePermission: APIChannelCategoryRolePermission
+    channelCategoryRolePermission: APIGuildCategoryRolePermission
 }

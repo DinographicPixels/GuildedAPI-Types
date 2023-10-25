@@ -1,3 +1,4 @@
+import { Permissions } from "../../gateway"
 import { APIGuild, APIGuildGroup, APIGuildRole, APIGuildSubscription, APIGuildCategory } from "../../payloads/v1/Guilds"
 import { APIGuildMemberBan } from "../../payloads/v1/Members"
 
@@ -78,9 +79,7 @@ export interface POSTGuildRoleBody {
     /** If set, this role can be mentioned (default false) */
     isMentionable?: boolean;
     /** Permissions must be a collection of valid permissions as defined in the Enums/Permissions section of Guilded API documentation website */
-    permissions: Array<string>;
-    /** The priority the role will be in relation to other roles in the server. The higher the value, the more precedence the role has over lower priority roles, and the higher up it will be displayed in the UI. Values can be zero or negative (min `1`) */
-    priority?: number;
+    permissions: Array<Permissions>;
     /** An array of integer values corresponding to the decimal RGB representation for a color. The first color is solid, and a second color indicates a gradient (min items 0; max items 2) */
     colors: Array<number>;
 }
@@ -99,16 +98,22 @@ export interface PATCHGuildRoleBody {
     /** If set, this role can be mentioned (default false) */
     isMentionable?: boolean;
     /** Permissions must be a collection of valid permissions as defined in the Enums/Permissions section of Guilded API documentation website */
-    permissions: Array<string>;
+    permissions: Array<Permissions>;
+    /** The priority the role will be in relation to other roles in the server. The higher the value, the more precedence the role has over lower priority roles, and the higher up it will be displayed in the UI. Values can be zero or negative (min `1`) */
+    priority?: number;
     /** An array of integer values corresponding to the decimal RGB representation for a color. The first color is solid, and a second color indicates a gradient (min items 0; max items 2) */
-    colors: Array<number>;    
-}
-
-export interface PATCHGuildRoleUpdateResponse {
-    role: APIGuildRole;
+    colors: Array<number>;
 }
 
 export interface PATCHGuildRoleResponse {
+    role: APIGuildRole;
+}
+
+export interface PATCHGuildRoleUpdateBody {
+    permissions: Partial<Record<Permissions, boolean>>;
+}
+
+export interface PATCHGuildRoleUpdateResponse {
     role: APIGuildRole;
 }
 
