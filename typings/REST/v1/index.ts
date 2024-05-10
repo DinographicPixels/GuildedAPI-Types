@@ -14,3 +14,4 @@ export * from './Users';
 export * from './Webhooks';
 export * from "./Users";
 export * from './Misc';
+export * from './URLSignature';

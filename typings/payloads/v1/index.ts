@@ -13,3 +13,4 @@ export * from './Members';
 // export * from './Reactions';
 export * from './Users';
 export * from './Webhooks';
+export * from './URLSignature';

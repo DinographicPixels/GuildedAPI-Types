@@ -31,7 +31,7 @@ export const GatewayEvents = {
         ChannelMessageReactionManyDeleted: "ChannelMessageReactionManyDeleted",
         ChannelMessagePinned: "ChannelMessagePinned",
         ChannelMessageUnpinned: "ChannelMessageUnpinned",
-        // Channel 
+        // Channel
         ServerChannelCreated: "ServerChannelCreated",
         ServerChannelUpdated: "ServerChannelUpdated",
         ServerChannelDeleted: "ServerChannelDeleted",
@@ -53,8 +53,8 @@ export const GatewayEvents = {
         ForumTopicCreated: "ForumTopicCreated",
         ForumTopicUpdated: "ForumTopicUpdated",
         ForumTopicDeleted: "ForumTopicDeleted",
-        ForumTopicPinned: "ForumTopicPinned", 
-        ForumTopicUnpinned: "ForumTopicUnpinned", 
+        ForumTopicPinned: "ForumTopicPinned",
+        ForumTopicUnpinned: "ForumTopicUnpinned",
         ForumTopicReactionCreated: "ForumTopicReactionCreated",
         ForumTopicReactionDeleted: "ForumTopicReactionDeleted",
         ForumTopicCommentCreated: "ForumTopicCommentCreated",
@@ -66,11 +66,11 @@ export const GatewayEvents = {
         ForumTopicUnlocked: "ForumTopicUnlocked",
         // Guild
         ServerMemberBanned: "ServerMemberBanned",
-        ServerMemberUnbanned: "ServerMemberUnbanned", 
-        ServerMemberJoined: "ServerMemberJoined", 
-        ServerMemberRemoved: "ServerMemberRemoved", 
+        ServerMemberUnbanned: "ServerMemberUnbanned",
+        ServerMemberJoined: "ServerMemberJoined",
+        ServerMemberRemoved: "ServerMemberRemoved",
         ServerMemberUpdated: "ServerMemberUpdated",
-        ServerRolesUpdated: "ServerRolesUpdated",  
+        ServerRolesUpdated: "ServerRolesUpdated",
         ServerMemberSocialLinkCreated: "ServerMemberSocialLinkCreated",
         ServerMemberSocialLinkUpdated: "ServerMemberSocialLinkUpdated",
         ServerMemberSocialLinkDeleted: "ServerMemberSocialLinkDeleted",
@@ -97,7 +97,7 @@ export const GatewayEvents = {
         CalendarEventDeleted: "CalendarEventDeleted",
         CalendarEventRsvpUpdated: "CalendarEventRsvpUpdated",
         CalendarEventRsvpDeleted: "CalendarEventRsvpDeleted",
-        CalendarEventRsvpManyUpdated: "CalendarEventRsvpManyUpdated", 
+        CalendarEventRsvpManyUpdated: "CalendarEventRsvpManyUpdated",
         CalendarEventReactionCreated: "CalendarEventReactionCreated",
         CalendarEventReactionDeleted: "CalendarEventReactionDeleted",
         CalendarEventCommentCreated: "CalendarEventCommentCreated",
@@ -264,6 +264,7 @@ export const USER = (userID: string) => `/users/${userID}`;
 export const USER_SERVERS = (userID: string) => `/users/${userID}/servers`;
 export const USER_STATUS = (userID: string) => `/users/${userID}/status`;
 
+
 export const CHANNEL_MESSAGES = (channelID: string) => `/channels/${channelID}/messages`;
 export const CHANNEL_MESSAGE = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}`;
 export const CHANNEL_MESSAGE_PIN = (channelID: string, messageID: string) => `/channels/${channelID}/messages/${messageID}/pin`;
@@ -356,3 +357,5 @@ export const GUILD_WEBHOOK = (guildID: string, webhookID: string)=> `/servers/${
 
 export const GUILD_CATEGORY_CREATE = (guildID: string) => `/servers/${guildID}/categories`;
 export const GUILD_CATEGORY = (guildID: string, categoryID: number) => `/servers/${guildID}/categories/${categoryID}`;
+
+export const URL_SIGNATURES = () => `/url-signatures`;
