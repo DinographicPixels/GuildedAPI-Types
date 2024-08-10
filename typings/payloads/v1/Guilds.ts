@@ -2,7 +2,7 @@ import * as OpenAPI from "../../schemas/v1"
 
 /** Different types of Guilds */
 export const APIGuildCategories = OpenAPI.ServerType;
-export type APIGuildCategories = OpenAPI.ServerType;
+export type APIGuildCategories = OpenAPI.ServerType | `${OpenAPI.ServerType}`;
 // export type APIGuildCategories = 'team'|'organization'|'community'|'clan'|'guild'|'friends'|'streaming'|'other';
 
 export type APIGuild = OpenAPI.components["schemas"]["Server"];

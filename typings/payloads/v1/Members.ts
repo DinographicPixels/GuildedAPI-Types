@@ -4,7 +4,11 @@ export const UserCategories = {
     ...OpenAPI.UserType,
     ...OpenAPI.UserSummaryType
 };
-export type UserCategories = OpenAPI.UserType | OpenAPI.UserSummaryType;
+export type UserCategories =
+    OpenAPI.UserType
+    | OpenAPI.UserSummaryType
+    | `${OpenAPI.UserType}`
+    | `${OpenAPI.UserSummaryType}`;
 
 export type APIUser = OpenAPI.components["schemas"]["User"];
 // export interface APIUser {

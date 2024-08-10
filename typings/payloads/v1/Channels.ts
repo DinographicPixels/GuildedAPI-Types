@@ -1,7 +1,7 @@
 import * as OpenAPI from "../../schemas/v1"
 
 export const APIChannelCategories = OpenAPI.ServerChannelType;
-export type APIChannelCategories = OpenAPI.ServerChannelType;
+export type APIChannelCategories = OpenAPI.ServerChannelType | `${OpenAPI.ServerChannelType}`;
 
 export type APIGuildChannel = OpenAPI.components["schemas"]["ServerChannel"];
 
