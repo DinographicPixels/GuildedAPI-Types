@@ -1,11 +1,12 @@
 {
   "name": "guildedapi-types.ts",
-  "version": "0.3.45",
+  "version": "0.3.49",
   "description": "Up to date Guilded API Typings. Contribution is welcome.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs",
-    "prepublishOnly": "npm run build"
+    "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs && npm run generateSchema",
+    "prepublishOnly": "npm run build",
+    "generateSchema": "npx openapi-typescript https://www.guilded.gg/api/v1/open-api-schema.json -o ./schemas/v1.d.ts"
   },
   "repository": {
     "type": "git",

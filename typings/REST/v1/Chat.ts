@@ -11,6 +11,8 @@ export interface POSTChannelMessageBody {
     content?: string,
     /** At this time, only one embed is supported per message, and attachments are not supported. If you need to send more than one embed or upload attachments, consider creating the message via a webhook. (min items `1`; max items `1` */
     embeds?: Array<APIEmbedOptions>
+    /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
+    hiddenLinkPreviewUrls?: Array<string>;
 }
 
 export interface POSTChannelMessageResponse {
@@ -40,7 +42,9 @@ export interface PUTChannelMessageBody {
     /** The content of the message */
     content?: string,
     /** At this time, only one embed is supported per message, and attachments are not supported. If you need to send more than one embed or upload attachments, consider creating the message via a webhook. (min items `1`; max items `1`) */
-    embeds?: Array<APIChatMessage>
+    embeds?: Array<APIEmbedOptions>
+    /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
+    hiddenLinkPreviewUrls?: Array<string>;
 }
 
 export interface PUTChannelMessageResponse {
