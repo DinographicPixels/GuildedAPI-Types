@@ -1,12 +1,12 @@
 {
   "name": "guildedapi-types.ts",
-  "version": "0.3.49",
+  "version": "0.3.55",
   "description": "Up to date Guilded API Typings. Contribution is welcome.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs && npm run generateSchema",
+    "build": "npm install && tsc && gen-esm-wrapper v1.js v1.mjs && node generateSchema.js",
     "prepublishOnly": "npm run build",
-    "generateSchema": "npx openapi-typescript https://www.guilded.gg/api/v1/open-api-schema.json -o ./schemas/v1.d.ts"
+    "generateSchema": "node generateSchema.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/DinographicPixels/guildedapi-types#readme",
   "devDependencies": {
-    "gen-esm-wrapper": "^1.1.3"
+    "@types/node": "^22.2.0",
+    "gen-esm-wrapper": "^1.1.3",
+    "openapi-typescript": "^7.3.0"
   },
   "dependencies": {
     "tslib": "^2.4.1"

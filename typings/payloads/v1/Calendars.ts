@@ -1,5 +1,5 @@
 // import { APIMentions } from "./Chat";
-import type * as OpenAPI from "../../../schemas/v1"
+import * as OpenAPI from "../../schemas/v1"
 
 // export interface APICalendarEvent {
 //     /** The ID of the calendar event (min 1) */
@@ -47,7 +47,8 @@ import type * as OpenAPI from "../../../schemas/v1"
 
 export type APICalendarEvent = OpenAPI.components["schemas"]["CalendarEvent"];
 
-export type APICalendarEventRSVPStatuses = 'going' | 'maybe' | 'declined' | 'invited' | 'waitlisted' | 'not responded';
+
+export type APICalendarEventRSVPStatuses = OpenAPI.CalendarEventRsvpStatus;
 
 // export interface APICalendarEventRSVP {
 //     /** The ID of the calendar event (min 1) */
