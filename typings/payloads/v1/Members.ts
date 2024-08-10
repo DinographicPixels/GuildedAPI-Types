@@ -1,7 +1,10 @@
 import * as OpenAPI from "../../schemas/v1"
 
-export const UserCategories = OpenAPI.UserType;
-export type UserCategories = OpenAPI.UserType;
+export const UserCategories = {
+    ...OpenAPI.UserType,
+    ...OpenAPI.UserSummaryType
+};
+export type UserCategories = OpenAPI.UserType | OpenAPI.UserSummaryType;
 
 export type APIUser = OpenAPI.components["schemas"]["User"];
 // export interface APIUser {

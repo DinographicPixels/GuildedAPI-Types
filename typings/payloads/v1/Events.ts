@@ -93,7 +93,7 @@ export interface GatewayEvent_ServerMemberJoined {
     serverId: string,
     member: APIGuildMember
     /** Count of members in this server after this join.
-     * 
+     *
      * Note: at higher member counts (1000+), this value is only updated periodically and should not be used in situations that require absolute accuracy
     */
     serverMemberCount: number;
@@ -400,7 +400,7 @@ export interface GatewayEvent_CalendarEventRsvpDeleted {
 
 export interface GatewayEvent_CalendarEventReactionCreated {
     serverId?: string;
-    reaction: APICalendarEventReaction; 
+    reaction: APICalendarEventReaction;
 }
 
 export interface GatewayEvent_CalendarEventReactionDeleted {
@@ -451,7 +451,7 @@ export interface GatewayEvent_ListItemUncompleted {
 export interface GatewayEvent_ChannelMessageReactionCreated {
     /** The ID of the server */
     serverId?: string
-    reaction: APIChatMessageReaction; 
+    reaction: APIChatMessageReaction;
 }
 
 export interface GatewayEvent_ChannelMessageReactionDeleted {
@@ -478,25 +478,25 @@ export interface GatewayEvent_ChannelMessageReactionManyDeleted {
 export interface GatewayEvent_AnnouncementReactionCreated {
     /** The ID of the server */
     serverId?: string
-    reaction: APIAnnouncementReaction; 
+    reaction: APIAnnouncementReaction;
 }
 
 export interface GatewayEvent_AnnouncementReactionDeleted {
     /** The ID of the server */
     serverId?: string
-    reaction: APIAnnouncementReaction; 
+    reaction: APIAnnouncementReaction;
 }
 
 export interface GatewayEvent_AnnouncementCommentReactionCreated {
     /** The ID of the server */
     serverId?: string
-    reaction: APIAnnouncementCommentReaction; 
+    reaction: APIAnnouncementCommentReaction;
 }
 
 export interface GatewayEvent_AnnouncementCommentReactionDeleted {
     /** The ID of the server */
     serverId?: string
-    reaction: APIAnnouncementCommentReaction; 
+    reaction: APIAnnouncementCommentReaction;
 }
 
 export interface GatewayEvent_GroupCreated {
