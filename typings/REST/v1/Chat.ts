@@ -1,131 +1,145 @@
-import { APIAnnouncement, APIAnnouncementComment, APIChatMessage, APIChatMessageCategories, APIEmbedOptions, APIMentions } from "../../payloads/v1/Chat";
+import * as OpenAPI from "../../schemas/v1"
 
-export interface POSTChannelMessageBody {
-    /** If set, this message will only be seen by those mentioned or replied to */
-    isPrivate?: boolean,
-    /** If set, this message will not notify any mentioned users or roles (default false) */
-    isSilent?: boolean,
-    /** Message IDs to reply to (min items 1; max items 5) */
-    replyMessageIds?: Array<string>,
-    /** The content of the message (min length `1`; max length `4000`) */
-    content?: string,
-    /** At this time, only one embed is supported per message, and attachments are not supported. If you need to send more than one embed or upload attachments, consider creating the message via a webhook. (min items `1`; max items `1` */
-    embeds?: Array<APIEmbedOptions>
-    /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
-    hiddenLinkPreviewUrls?: Array<string>;
-}
+export type POSTChannelMessageBody = OpenAPI.operations["ChannelMessageCreate"]["requestBody"]["content"]["application/json"];
+// export interface POSTChannelMessageBody {
+//     /** If set, this message will only be seen by those mentioned or replied to */
+//     isPrivate?: boolean,
+//     /** If set, this message will not notify any mentioned users or roles (default false) */
+//     isSilent?: boolean,
+//     /** Message IDs to reply to (min items 1; max items 5) */
+//     replyMessageIds?: Array<string>,
+//     /** The content of the message (min length `1`; max length `4000`) */
+//     content?: string,
+//     /** At this time, only one embed is supported per message, and attachments are not supported. If you need to send more than one embed or upload attachments, consider creating the message via a webhook. (min items `1`; max items `1` */
+//     embeds?: Array<APIEmbedOptions>
+//     /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
+//     hiddenLinkPreviewUrls?: Array<string>;
+// }
 
-export interface POSTChannelMessageResponse {
-    message: APIChatMessage
-}
+export type POSTChannelMessageResponse = OpenAPI.operations["ChannelMessageCreate"]["responses"]["201"]["content"]["application/json"];
+// export interface POSTChannelMessageResponse {
+//     message: APIChatMessage
+// }
 
-export interface GETChannelMessagesQuery {
-    /** An ISO 8601 timestamp that will be used to filter out results for the current page */
-    before?: string,
-    /** undefined. Order will be reversed when compared to before or when omitting this parameter altogether */
-    after?: string,
-    /** The max size of the page (default `50`; min `1`; max `100`) */
-    limit?: number,
-    /** Whether to include private messages between all users in response (default `false`) */
-    includePrivate?: boolean
-}
+export type GETChannelMessagesQuery = OpenAPI.operations["ChannelMessageReadMany"]["parameters"]["query"];
+// export interface GETChannelMessagesQuery {
+//     /** An ISO 8601 timestamp that will be used to filter out results for the current page */
+//     before?: string,
+//     /** undefined. Order will be reversed when compared to before or when omitting this parameter altogether */
+//     after?: string,
+//     /** The max size of the page (default `50`; min `1`; max `100`) */
+//     limit?: number,
+//     /** Whether to include private messages between all users in response (default `false`) */
+//     includePrivate?: boolean
+// }
 
-export interface GETChannelMessagesResponse {
-    messages: Array<APIChatMessage>
-}
+export type GETChannelMessagesResponse = OpenAPI.operations["ChannelMessageReadMany"]["responses"]["200"]["content"]["application/json"];
+// export interface GETChannelMessagesResponse {
+//     messages: Array<APIChatMessage>
+// }
 
-export interface GETChannelMessageResponse {
-    message: APIChatMessage
-}
+export type GETChannelMessageResponse = OpenAPI.operations["ChannelMessageRead"]["responses"]["200"]["content"]["application/json"];
+// export interface GETChannelMessageResponse {
+//     message: APIChatMessage
+// }
 
-export interface PUTChannelMessageBody {
-    /** The content of the message */
-    content?: string,
-    /** At this time, only one embed is supported per message, and attachments are not supported. If you need to send more than one embed or upload attachments, consider creating the message via a webhook. (min items `1`; max items `1`) */
-    embeds?: Array<APIEmbedOptions>
-    /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
-    hiddenLinkPreviewUrls?: Array<string>;
-}
+export type PUTChannelMessageBody = OpenAPI.operations["ChannelMessageUpdate"]["requestBody"]["content"]["application/json"];
+// export interface PUTChannelMessageBody {
+//     /** The content of the message */
+//     content?: string,
+//     /** At this time, only one embed is supported per message, and attachments are not supported. If you need to send more than one embed or upload attachments, consider creating the message via a webhook. (min items `1`; max items `1`) */
+//     embeds?: Array<APIEmbedOptions>
+//     /** Links in content to prevent unfurling as a link preview when displaying in Guilded (min items 1; must have unique items true) */
+//     hiddenLinkPreviewUrls?: Array<string>;
+// }
 
-export interface PUTChannelMessageResponse {
-    message: APIChatMessage | {
-        /** The ID of the message */
-        id?: string,
-        /** The type of chat message. "system" messages are generated by Guilded, while "default" messages are user or bot-generated. */
-        type?: APIChatMessageCategories,
-        /** The ID of the server */
-        serverId?: string,
-        /** The ID of the channel */
-        channelId: string,
-        /** The content of the message */
-        content?: string,
-        /** (min items `1`; max items `10`) */
-        embeds?: Array<APIEmbedOptions>,
-        /** Message IDs that were replied to (min items `1`; max items `5`) */
-        replyMessageIds?: Array<string>,
-        /** If set, this message will only be seen by those mentioned or replied to */
-        isPrivate?: boolean,
-        /** If set, this message did not notify mention or reply recipients (default `false`) */
-        isSilent?: boolean,
+export type PUTChannelMessageResponse = OpenAPI.operations["ChannelMessageUpdate"]["responses"]["200"]["content"]["application/json"];
+// export interface PUTChannelMessageResponse {
+//     message: APIChatMessage | {
+//         /** The ID of the message */
+//         id?: string,
+//         /** The type of chat message. "system" messages are generated by Guilded, while "default" messages are user or bot-generated. */
+//         type?: APIChatMessageCategories,
+//         /** The ID of the server */
+//         serverId?: string,
+//         /** The ID of the channel */
+//         channelId: string,
+//         /** The content of the message */
+//         content?: string,
+//         /** (min items `1`; max items `10`) */
+//         embeds?: Array<APIEmbedOptions>,
+//         /** Message IDs that were replied to (min items `1`; max items `5`) */
+//         replyMessageIds?: Array<string>,
+//         /** If set, this message will only be seen by those mentioned or replied to */
+//         isPrivate?: boolean,
+//         /** If set, this message did not notify mention or reply recipients (default `false`) */
+//         isSilent?: boolean,
+//
+//         mentions?: APIMentions,
+//         /** The ISO 8601 timestamp that the message was created at */
+//         createdAt?: string,
+//         /** The ID of the user who created this message (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
+//         createdBy?: string,
+//         /** The ID of the webhook who created this message, if it was created by a webhook */
+//         createdByWebhookId?: string,
+//         /** The ISO 8601 timestamp that the message was updated at, if relevant */
+//         updatedAt: string
+//     }
+// }
 
-        mentions?: APIMentions,
-        /** The ISO 8601 timestamp that the message was created at */
-        createdAt?: string,
-        /** The ID of the user who created this message (Note: If this event has createdByWebhookId present, this field will still be populated, but can be ignored. In this case, the value of this field will always be Ann6LewA) */
-        createdBy?: string,
-        /** The ID of the webhook who created this message, if it was created by a webhook */
-        createdByWebhookId?: string,
-        /** The ISO 8601 timestamp that the message was updated at, if relevant */
-        updatedAt: string
-    }
-}
-
-export interface POSTChannelAnnouncementBody {
-    /** The title of the announcement (min length 1; max length 128) */
-    title: string;
-    /** The content of the announcement (min length 1; max length 100000) */
-    content: string;
-};
+export type POSTChannelAnnouncementBody = OpenAPI.operations["AnnouncementCreate"]["requestBody"]["content"]["application/json"];
+// export interface POSTChannelAnnouncementBody {
+//     /** The title of the announcement (min length 1; max length 128) */
+//     title: string;
+//     /** The content of the announcement (min length 1; max length 100000) */
+//     content: string;
+// }
 
 // no body POSTChannelAnnouncement
 // no query POSTChannelAnnouncement
 
-export interface POSTChannelAnnouncementResponse {
-    announcement: APIAnnouncement;
-};
+export type POSTChannelAnnouncementResponse = OpenAPI.operations["AnnouncementCreate"]["responses"]["200"]["content"]["application/json"];
+// export interface POSTChannelAnnouncementResponse {
+//     announcement: APIAnnouncement;
+// }
 
 // no body for GETChannelAnnouncements
 
-export interface GETChannelAnnouncementsQuery {
-    /** An ISO 8601 timestamp that will be used to filter out results for the current page */
-    before?: string;
-    /** The max size of the page (default 25; min 1; max 250) */
-    limit?: number;
-};
+export type GETChannelAnnouncementsQuery = OpenAPI.operations["AnnouncementReadMany"]["parameters"]["query"];
+// export interface GETChannelAnnouncementsQuery {
+//     /** An ISO 8601 timestamp that will be used to filter out results for the current page */
+//     before?: string;
+//     /** The max size of the page (default 25; min 1; max 250) */
+//     limit?: number;
+// }
 
-export interface GETChannelAnnouncementsResponse {
-    announcements: Array<APIAnnouncement>;
-};
+export type GETChannelAnnouncementsResponse = OpenAPI.operations["AnnouncementReadMany"]["responses"]["200"]["content"]["application/json"];
+// export interface GETChannelAnnouncementsResponse {
+//     announcements: Array<APIAnnouncement>;
+// }
 
 // no query for GETChannelAnnouncement
 // no body for GETChannelAnnouncement
 
-export interface GETChannelAnnouncementResponse {
-    announcement: APIAnnouncement;
-};
+export type GETChannelAnnouncementResponse = OpenAPI.operations["AnnouncementRead"]["responses"]["200"]["content"]["application/json"];
+// export interface GETChannelAnnouncementResponse {
+//     announcement: APIAnnouncement;
+// }
 
 // no query for PATCHChannelAnnouncement
 
-export interface PATCHChannelAnnouncementBody {
-    /** The title of the announcement (min length 1; max length 128) */
-    title?: string;
-    /** The content of the announcement (min length 1; max length 100000) */
-    content?: string;
-};
+export type PATCHChannelAnnouncementBody = OpenAPI.operations["AnnouncementUpdate"]["requestBody"]["content"]["application/json"];
+// export interface PATCHChannelAnnouncementBody {
+//     /** The title of the announcement (min length 1; max length 128) */
+//     title?: string;
+//     /** The content of the announcement (min length 1; max length 100000) */
+//     content?: string;
+// }
 
-export interface PATCHChannelAnnouncementResponse {
-    announcement: APIAnnouncement;
-};
+export type PATCHChannelAnnouncementResponse = OpenAPI.operations["AnnouncementUpdate"]["responses"]["200"]["content"]["application/json"];
+// export interface PATCHChannelAnnouncementResponse {
+//     announcement: APIAnnouncement;
+// }
 
 
 // no body for DELETEChannelAnnouncement
@@ -135,36 +149,44 @@ export interface PATCHChannelAnnouncementResponse {
 
 // no query for POSTChannelAnnouncementComment
 
-export interface POSTChannelAnnouncementCommentBody {
-    /** The content of the announcement comment (min length 1; max length 10000) */
-    content: string;
-};
+export type POSTChannelAnnouncementCommentBody = OpenAPI.operations["AnnouncementCommentCreate"]["requestBody"]["content"]["application/json"];
+// export interface POSTChannelAnnouncementCommentBody {
+//     /** The content of the announcement comment (min length 1; max length 10000) */
+//     content: string;
+// }
 
-export interface POSTChannelAnnouncementCommentResponse {
-    announcementComment: APIAnnouncementComment;
-};
+export type POSTChannelAnnouncementCommentResponse = OpenAPI.operations["AnnouncementCommentCreate"]["responses"]["200"]["content"]["application/json"];
+// export interface POSTChannelAnnouncementCommentResponse {
+//     announcementComment: APIAnnouncementComment;
+// }
 
 
 // no body GETChannelAnnouncementComments
 // no query GETChannelAnnouncementComments
-export interface GETChannelAnnouncementCommentsResponse {
-    announcementComments: Array<APIAnnouncementComment>
-};
+
+export type GETChannelAnnouncementCommentsResponse = OpenAPI.operations["AnnouncementCommentReadMany"]["responses"]["200"]["content"]["application/json"];
+// export interface GETChannelAnnouncementCommentsResponse {
+//     announcementComments: Array<APIAnnouncementComment>
+// }
 
 
 // no body GETChannelAnnouncementComment
 // no query GETChannelAnnouncementComment
-export interface GETChannelAnnouncementCommentResponse {
-    announcementComment: APIAnnouncementComment;
-};
+export type GETChannelAnnouncementCommentResponse = OpenAPI.operations["AnnouncementCommentRead"]["responses"]["200"]["content"]["application/json"];
+// export interface GETChannelAnnouncementCommentResponse {
+//     announcementComment: APIAnnouncementComment;
+// }
 
 
 // no query for PATCHChannelAnnouncementComment
-export interface PATCHChannelAnnouncementCommentBody {
-    /** The content of the announcement comment (min length 1; max length 10000) */
-    content: string;
-};
+export type PATCHChannelAnnouncementCommentBody = OpenAPI.operations["AnnouncementCommentUpdate"]["requestBody"]["content"]["application/json"];
+// export interface PATCHChannelAnnouncementCommentBody {
+//     /** The content of the announcement comment (min length 1; max length 10000) */
+//     content: string;
+// }
 
-export interface PATCHChannelAnnouncementCommentResponse {
-    announcementComment: APIAnnouncementComment;
-};
+export type PATCHChannelAnnouncementCommentResponse = OpenAPI.operations["AnnouncementCommentUpdate"]["responses"]["200"]["content"]["application/json"];
+// export interface PATCHChannelAnnouncementCommentResponse {
+//     announcementComment: APIAnnouncementComment;
+// }
+

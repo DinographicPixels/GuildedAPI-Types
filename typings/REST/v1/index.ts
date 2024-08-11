@@ -4,7 +4,7 @@ export * from './Chat';
 export * from './Docs';
 // export * from './Emotes';
 export * from './Forums';
-export * from './GuildXP';
+// export * from './GuildXP';
 export * from './Guilds';
 export * from './ListItems';
 export * from './Members';

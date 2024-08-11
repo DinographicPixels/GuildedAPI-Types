@@ -1,3 +1,4 @@
+import * as OpenAPI from "../schemas/v1"
 export const GatewayVersion = "1";
 export const GatewayURL = `wss://www.guilded.gg/websocket/v${GatewayVersion}`;
 
@@ -135,7 +136,7 @@ export interface GatewayWelcome {
     op: GatewayOPCodes.Welcome;
     /** DATA */
     d: GatewayWelcomeData;
-};
+}
 
 export interface GatewayWelcomeData {
     lastMessageId: string;
@@ -154,12 +155,12 @@ export interface GatewayResume {
     op: GatewayOPCodes.Welcome;
     /** DATA */
     d: GatewayResumeData;
-};
+}
 
 export interface GatewayResumeData {
     /** Message ID used for replaying events after a disconnect */
     s: string;
-};
+}
 
 export enum GatewayOPCodes {
     Welcome = 1,
@@ -167,8 +168,9 @@ export enum GatewayOPCodes {
     Resume = 2,
     Failure = 8,
     Success = 9
-};
+}
 
+export type Perm = OpenAPI.paths
 export enum Permissions {
     CanUpdateServer = "CanUpdateServer",
     CanManageRoles = "CanManageRoles",

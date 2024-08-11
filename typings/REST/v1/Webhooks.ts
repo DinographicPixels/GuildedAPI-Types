@@ -1,46 +1,55 @@
-import {APIEmbedOptions, APIWebhook} from "../../payloads"
+import * as OpenAPI from "../../schemas/v1"
+import {APIEmbedOptions} from "../../payloads";
 
-export interface POSTGuildWebhookBody {
-    /** The name of the webhook (min length `1`; max length `128`) */
-    name: string,
-    /** Channel ID to create the webhook in */
-    channelId: string
-}
+export type POSTGuildWebhookBody = OpenAPI.operations["WebhookCreate"]["requestBody"]["content"]["application/json"];
+// export interface POSTGuildWebhookBody {
+//     /** The name of the webhook (min length `1`; max length `128`) */
+//     name: string,
+//     /** Channel ID to create the webhook in */
+//     channelId: string
+// }
 
-export interface POSTGuildWebhookResponse {
-    webhook: APIWebhook
-}
-
-
-
-export interface GETGuildWebhooksQuery {
-    /** ID of the channel you want to filter for webhooks */
-    channelId: string
-}
-
-export interface GETGuildWebhooksResponse {
-    webhooks: Array<APIWebhook>
-}
+export type POSTGuildWebhookResponse = OpenAPI.operations["WebhookCreate"]["responses"]["201"]["content"]["application/json"];
+// export interface POSTGuildWebhookResponse {
+//     webhook: APIWebhook
+// }
 
 
 
-export interface GETGuildWebhookResponse {
-    webhook: APIWebhook
-}
+export type GETGuildWebhooksQuery = OpenAPI.operations["WebhookReadMany"]["parameters"]["query"];
+// export interface GETGuildWebhooksQuery {
+//     /** ID of the channel you want to filter for webhooks */
+//     channelId: string
+// }
+
+export type GETGuildWebhooksResponse = OpenAPI.operations["WebhookReadMany"]["responses"]["200"]["content"]["application/json"];
+// export interface GETGuildWebhooksResponse {
+//     webhooks: Array<APIWebhook>
+// }
 
 
 
-export interface PUTGuildWebhookBody {
-    /** The name of the webhook (min length `1`; max length `128`) */
-    name: string,
-    /** The ID of the channel */
-    channelId?: string
-}
+export type GETGuildWebhookResponse = OpenAPI.operations["WebhookRead"]["responses"]["200"]["content"]["application/json"];
+// export interface GETGuildWebhookResponse {
+//     webhook: APIWebhook
+// }
 
-export interface PUTGuildWebhookResponse {
-    webhook: APIWebhook
-}
 
+
+export type PUTGuildWebhookBody = OpenAPI.operations["WebhookUpdate"]["requestBody"]["content"]["application/json"];
+// export interface PUTGuildWebhookBody {
+//     /** The name of the webhook (min length `1`; max length `128`) */
+//     name: string,
+//     /** The ID of the channel */
+//     channelId?: string
+// }
+
+export type PUTGuildWebhookResponse = OpenAPI.operations["WebhookUpdate"]["responses"]["200"]["content"]["application/json"];
+// export interface PUTGuildWebhookResponse {
+//     webhook: APIWebhook
+// }
+
+// from media.guilded.gg
 export interface POSTExecuteWebhookBody {
     content?: string;
     username?: string;
@@ -48,6 +57,7 @@ export interface POSTExecuteWebhookBody {
     embeds?: Array<APIEmbedOptions>;
 }
 
+// from media.guilded.gg
 export interface POSTExecuteWebhookResponse {
     id: string;
     channelId: string;
