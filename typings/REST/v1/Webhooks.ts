@@ -1,5 +1,5 @@
-import * as OpenAPI from "../../schemas/v1"
-import {APIEmbedOptions} from "../../payloads";
+import type * as OpenAPI from "../../schemas/v1"
+import type {APIEmbedOptions} from "../../payloads";
 
 export type POSTGuildWebhookBody = OpenAPI.operations["WebhookCreate"]["requestBody"]["content"]["application/json"];
 // export interface POSTGuildWebhookBody {

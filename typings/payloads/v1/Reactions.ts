@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type APIChatMessageReaction = OpenAPI.components["schemas"]["ChatMessageReaction"];
 // export interface APIChatMessageReaction {

@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type APIWebhook = OpenAPI.components["schemas"]["Webhook"];
 // export interface APIWebhook {

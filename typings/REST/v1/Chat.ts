@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type POSTChannelMessageBody = OpenAPI.operations["ChannelMessageCreate"]["requestBody"]["content"]["application/json"];
 // export interface POSTChannelMessageBody {

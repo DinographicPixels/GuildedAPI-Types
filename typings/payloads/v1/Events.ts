@@ -1,15 +1,15 @@
-import { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventSeries } from "./Calendars";
-import { APIChannelRolePermission, APIChannelUserPermission, APIGuildChannel } from "./Channels";
-import { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat";
-import { APIDoc, APIDocComment } from "./Docs";
-import { APIEmote } from "./Emotes";
-import { APIForumTopic, APIForumTopicComment } from "./Forums";
-import { APIGuild, APIGuildCategory, APIGuildCategoryRolePermission, APIGuildCategoryUserPermission, APIGuildGroup, APIGuildRole } from "./Guilds";
-import { APIListItem } from "./ListItems";
-import { APIGuildMember, APIGuildMemberBan } from "./Members";
-import { APIAnnouncementCommentReaction, APIAnnouncementReaction, APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
-import { APISocialLink, APIUserStatus } from "./Users";
-import { APIWebhook } from "./Webhooks";
+import type { APICalendarEvent, APICalendarEventComment, APICalendarEventRSVP, APICalendarEventSeries } from "./Calendars";
+import type { APIChannelRolePermission, APIChannelUserPermission, APIGuildChannel } from "./Channels";
+import type { APIAnnouncement, APIAnnouncementComment, APIChatMessage } from "./Chat";
+import type { APIDoc, APIDocComment } from "./Docs";
+import type { APIEmote } from "./Emotes";
+import type { APIForumTopic, APIForumTopicComment } from "./Forums";
+import type { APIGuild, APIGuildCategory, APIGuildCategoryRolePermission, APIGuildCategoryUserPermission, APIGuildGroup, APIGuildRole } from "./Guilds";
+import type { APIListItem } from "./ListItems";
+import type { APIGuildMember, APIGuildMemberBan } from "./Members";
+import type { APIAnnouncementCommentReaction, APIAnnouncementReaction, APICalendarEventCommentReaction, APICalendarEventReaction, APIChatMessageReaction, APIDocCommentReaction, APIDocReaction, APIForumTopicCommentReaction, APIForumTopicReaction } from "./Reactions";
+import type { APISocialLink, APIUserStatus } from "./Users";
+import type { APIWebhook } from "./Webhooks";
 
 export interface GatewayEvent_BotServerMembershipCreated {
     server: APIGuild,

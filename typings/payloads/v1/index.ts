@@ -10,7 +10,7 @@ export * from './Guilds';
 export * from './ListItems';
 export * from './Members';
 // export * from './Memberships';
-// export * from './Reactions';
+export * from './Reactions';
 export * from './Users';
 export * from './Webhooks';
 export * from './URLSignature';

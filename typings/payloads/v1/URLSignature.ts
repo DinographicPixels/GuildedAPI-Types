@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type APIURLSignature = OpenAPI.components["schemas"]["UrlSignature"];
 // export interface APIURLSignature {

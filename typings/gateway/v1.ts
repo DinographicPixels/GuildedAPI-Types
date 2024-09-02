@@ -1,4 +1,4 @@
-import * as OpenAPI from "../schemas/v1"
+import type * as OpenAPI from "../schemas/v1"
 export const GatewayVersion = "1";
 export const GatewayURL = `wss://www.guilded.gg/websocket/v${GatewayVersion}`;
 
@@ -148,7 +148,7 @@ export interface GatewayWelcomeData {
         createdBy: string;
     };
     heartbeatIntervalMs: number;
-};
+}
 
 export interface GatewayResume {
     /** OP Code */

@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type APIEmote = OpenAPI.components["schemas"]["Emote"];
 // export interface APIEmote {

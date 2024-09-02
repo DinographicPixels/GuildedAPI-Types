@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type GETGuildMemberSocialsResponse = OpenAPI.operations["MemberSocialLinkRead"]["responses"]["200"]["content"]["application/json"];
 // export interface GETGuildMemberSocialsResponse {

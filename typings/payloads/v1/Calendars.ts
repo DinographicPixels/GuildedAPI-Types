@@ -1,5 +1,5 @@
 // import { APIMentions } from "./Chat";
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 // export interface APICalendarEvent {
 //     /** The ID of the calendar event (min 1) */

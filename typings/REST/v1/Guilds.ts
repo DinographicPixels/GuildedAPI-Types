@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 
 export type GETGuildResponse = OpenAPI.operations["ServerRead"]["responses"]["200"]["content"]["application/json"];
 // export interface GETGuildResponse {

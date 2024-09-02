@@ -1,4 +1,4 @@
-import * as OpenAPI from "../../schemas/v1"
+import type * as OpenAPI from "../../schemas/v1"
 export type APIChatMessageCategories = 'default' | 'system';
 
 export type APIChatMessage = OpenAPI.components["schemas"]["ChatMessage"];
