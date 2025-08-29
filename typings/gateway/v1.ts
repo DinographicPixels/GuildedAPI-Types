@@ -175,7 +175,7 @@ export enum Permissions {
     CanUpdateServer = "CanUpdateServer",
     CanManageRoles = "CanManageRoles",
     CanInviteMembers = "CanInviteMembers",
-    CanKickMembers = "CanKickMember",
+    CanKickMembers = "CanKickMembers",
     CanManageGroups = "CanManageGroups",
     CanManageChannels = "CanManageChannels",
     CanManageWebhooks = "CanManageWebhooks",

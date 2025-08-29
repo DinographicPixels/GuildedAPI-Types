@@ -1,6 +1,6 @@
 {
   "name": "guildedapi-types.ts",
-  "version": "0.3.64",
+  "version": "0.3.66",
   "description": "Up to date Guilded API Typings. Contribution is welcome.",
   "main": "index.js",
   "scripts": {
@@ -10,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DinographicPixels/guildedapi-types.git"
+    "url": "git+https://github.com/Dinographic/guildedapi-types.git"
   },
   "keywords": [
     "guilded-api",
     "types",
     "typings"
   ],
-  "author": "DinographicPixels [PakkoGraphic]",
+  "author": "Dinographic",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/DinographicPixels/guildedapi-types/issues"
+    "url": "https://github.com/Dinographic/guildedapi-types/issues"
   },
-  "homepage": "https://github.com/DinographicPixels/guildedapi-types#readme",
+  "homepage": "https://github.com/Dinographic/guildedapi-types#readme",
   "devDependencies": {
     "@types/node": "^22.2.0",
     "gen-esm-wrapper": "^1.1.3",

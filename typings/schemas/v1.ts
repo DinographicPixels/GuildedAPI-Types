@@ -3857,7 +3857,7 @@ export interface components {
             categoryId: number;
         };
         /** @example {
-         *       "url": "https://cdn.gilcdn.com/TeamAvatar/f3ca3496e7f2b6bfaeddfbb6526bdec7-Large.png?w=450&h=450"
+         *       "url": "https://cdn.gldcdn.com/TeamAvatar/f3ca3496e7f2b6bfaeddfbb6526bdec7-Large.png?w=450&h=450"
          *     } */
         UrlSignature: {
             /** @description The URL that is to be signed */
@@ -9696,9 +9696,6 @@ export enum PathsServersServerIdMembersUserIdPermissionsGetParametersQueryIds {
     CanMuteMembers = "CanMuteMembers",
     CanDeafenMembers = "CanDeafenMembers",
     CanSendVoiceMessages = "CanSendVoiceMessages",
-    CanCreateScrims = "CanCreateScrims",
-    CanManageTournaments = "CanManageTournaments",
-    CanRegisterForTournaments = "CanRegisterForTournaments",
     CanChangeNickname = "CanChangeNickname",
     CanManageNicknames = "CanManageNicknames",
     CanViewPollResponses = "CanViewPollResponses",
